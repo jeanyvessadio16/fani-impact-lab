@@ -13,6 +13,8 @@ import {
     Banknote,
     Heart,
     TrendingUp,
+    Compass,
+    Award,
     type LucideIcon,
 } from "lucide-react";
 
@@ -24,7 +26,11 @@ import type {
     ConvictionData,
     VisionPillar,
     VisionData,
+    MethodStep,
+    MethodData,
     FounderInfo,
+    WhyChooseUsItem,
+    WhyChooseUsData,
 } from "@/types/about";
 
 export type {
@@ -35,7 +41,11 @@ export type {
     ConvictionData,
     VisionPillar,
     VisionData,
+    MethodStep,
+    MethodData,
     FounderInfo,
+    WhyChooseUsItem,
+    WhyChooseUsData,
 };
 
 export const OUR_CONVICTION: ConvictionData = {
@@ -149,3 +159,47 @@ export const FOUNDER_INFO: FounderInfo = {
         "Experte en entrepreneuriat, innovation et développement des écosystèmes",
     ],
 };
+
+export const OUR_METHOD: MethodData = {
+    badge: "NOTRE MÉTHODE",
+    title: "Le FIL",
+    caption: "Chaque projet est conçu pour connecter les bonnes personnes, structurer les solutions et produire des résultats mesurables.",
+    steps: [
+        {
+            id: 1,
+            letter: "F",
+            title: "Fédérer",
+            subtitle: "Connecter & Mobiliser",
+            description: "Rassembler les entrepreneurs, institutions, collectivités et partenaires autour d'une vision commune pour créer des synergies écosystémiques solides.",
+        },
+        {
+            id: 2,
+            letter: "I",
+            title: "Innover",
+            subtitle: "Structurer & Concevoir",
+            description: "Modéliser et concevoir des solutions audacieuses, adaptées aux réalités du terrain et axées sur la transformation et le renforcement des capacités.",
+        },
+        {
+            id: 3,
+            letter: "L",
+            title: "Libérer l'impact",
+            subtitle: "Déployer & Mesurer",
+            description: "Accompagner l'exécution concrète sur le terrain et générer des résultats tangibles, mesurables et pérennes pour les territoires.",
+        },
+    ],
+};
+
+export const WHY_CHOOSE_US: WhyChooseUsData = {
+    badge: "Notre impact & bilan",
+    title: "Pourquoi choisir ",
+    titleGradient: "FANI IMPACT LAB ?",
+    subtitle: "Nous ne sommes pas seulement des consultants, nous sommes des bâtisseurs d'écosystèmes.",
+    items: [
+        { id: 1, title: "Nous avons créé", icon: Compass },
+        { id: 2, title: "Nous avons accompagné", icon: Network },
+        { id: 3, title: "Nous avons plaidé", icon: Lightbulb },
+        { id: 4, title: "Nous avons fédéré", icon: Award },
+    ],
+};
+
+

@@ -75,6 +75,32 @@ export type VisionPillar = ConvictionPillar;
 export type VisionData = ConvictionData;
 
 /**
+ * Représente une étape de la méthode Le FIL.
+ */
+export type MethodStep = {
+    /** Identifiant unique */
+    id: number;
+    /** Lettre représentative (F, I, L) */
+    letter: string;
+    /** Titre de l'étape (ex: Fédérer) */
+    title: string;
+    /** Subtitle / Court résumé */
+    subtitle: string;
+    /** Description détaillée */
+    description: string;
+};
+
+/**
+ * Structure globale de la section Notre Méthode.
+ */
+export type MethodData = {
+    badge: string;
+    title: string;
+    caption: string;
+    steps: MethodStep[];
+};
+
+/**
  * Informations et profil de la fondatrice.
  */
 export type FounderInfo = {
@@ -91,3 +117,35 @@ export type FounderInfo = {
     /** Liste des compétences clés et réalisations */
     skills: string[];
 };
+
+/**
+ * Représente une raison de choisir FANI IMPACT LAB.
+ */
+export type WhyChooseUsItem = {
+    /** Identifiant unique */
+    id: number;
+    /** Titre de la raison / réalisation */
+    title: string;
+    /** Explication synthétique optionnelle */
+    description?: string;
+    /** Icône Lucide représentative optionnelle */
+    icon?: LucideIcon;
+};
+
+/**
+ * Structure globale de la section Pourquoi nous choisir.
+ */
+export type WhyChooseUsData = {
+    /** Badge supérieur */
+    badge: string;
+    /** Titre principal */
+    title: string;
+    /** Partie accentuée du titre */
+    titleGradient: string;
+    /** Sous-titre ou description d'en-tête */
+    subtitle: string;
+    /** Liste des avantages/raisons */
+    items: WhyChooseUsItem[];
+};
+
+

@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Sparkles, ArrowRight, Quote } from "lucide-react";
 import { WHAT_WE_DO, CLIENTS, FOUNDER_INFO } from "@/data/about";
+import ConvictionSection from "@/components/shared/ConvictionSection";
+import MethodSection from "@/components/shared/MethodSection";
+import WhyChooseUsSection from "@/components/shared/WhyChooseUsSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -20,7 +23,6 @@ export default function APropos() {
             {/* ============================================================ */}
             {/* HERO SECTION                                                  */}
             {/* ============================================================ */}
-            {/* Section Hero */}
             <section className="relative min-h-[75vh] flex items-center overflow-hidden bg-stone-950 text-white border-b border-stone-800">
                 {/* Arrière-plan avec Image claire et bien visible */}
                 <div
@@ -57,10 +59,10 @@ export default function APropos() {
                     {/* CTA */}
                     <div className="flex flex-wrap items-center gap-4 pt-2">
                         <Link
-                            href="#ce-que-nous-faisons"
+                            href="#conviction"
                             className="inline-flex items-center gap-2.5 h-12 px-7 text-sm font-semibold bg-orange-600 hover:bg-orange-700 text-white rounded-xl shadow-md transition-all hover:scale-[1.02] active:scale-[0.98]"
                         >
-                            Ce que nous faisons
+                            Notre vision
                             <ArrowRight className="size-4" />
                         </Link>
                         <Link
@@ -72,6 +74,22 @@ export default function APropos() {
                     </div>
                 </div>
             </section>
+
+            {/* ============================================================ */}
+            {/* NOTRE CONVICTION & VISION                                    */}
+            {/* ============================================================ */}
+            <ConvictionSection />
+
+            {/* ============================================================ */}
+            {/* NOTRE MÉTHODE (LE FIL)                                       */}
+            {/* ============================================================ */}
+            <MethodSection />
+
+            {/* ============================================================ */}
+            {/* POURQUOI NOUS CHOISIR / BILAN D'IMPACT                        */}
+            {/* ============================================================ */}
+            <WhyChooseUsSection />
+
 
 
             {/* ============================================================ */}

@@ -3,6 +3,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
 import { SERVICES } from "@/data/service";
 import ConvictionSection from "@/components/shared/ConvictionSection";
+import MethodSection from "@/components/shared/MethodSection";
+import WhyChooseUsSection from "@/components/shared/WhyChooseUsSection";
 import {
   Card,
   CardHeader,
@@ -150,6 +152,12 @@ export default function Home() {
 
       {/* Section Notre Conviction */}
       <ConvictionSection />
+
+      {/* Section Notre Méthode */}
+      <MethodSection />
+
+      {/* Section Pourquoi Nous Choisir */}
+      <WhyChooseUsSection />
 
       {/* Où nous trouver */}
       <section id="location" className="relative py-24 bg-white overflow-hidden">
