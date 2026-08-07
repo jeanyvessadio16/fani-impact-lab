@@ -1,8 +1,6 @@
-export type NavLink = {
-    id: number;
-    label: string;
-    href: string;
-};
+import type { NavLink, CompanyContact } from "@/types/navigation";
+
+export type { NavLink, CompanyContact };
 
 export const NAV_LINKS: NavLink[] = [
     { id: 1, label: "Accueil", href: "/" },
@@ -18,7 +16,7 @@ export const FOOTER_SERVICES_LINKS: NavLink[] = [
     { id: 4, label: "Research", href: "/#services" },
 ];
 
-export const COMPANY_CONTACT = {
+export const COMPANY_CONTACT: CompanyContact = {
     email: "contact@faniimpactlab.com",
     phone: "+221 00 000 00 00",
     address: "Santhiaba, Ziguinchor — Sénégal",

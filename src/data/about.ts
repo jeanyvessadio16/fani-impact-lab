@@ -8,40 +8,34 @@ import {
     GraduationCap,
     Zap,
     BarChart3,
+    Briefcase,
+    Users,
+    Banknote,
+    Heart,
+    TrendingUp,
     type LucideIcon,
 } from "lucide-react";
 
-export type WhatWeDoItem = {
-    id: number;
-    title: string;
-    description: string;
-    icon: LucideIcon;
-};
+import type {
+    WhatWeDoItem,
+    ClientItem,
+    StatItem,
+    ConvictionPillar,
+    ConvictionData,
+    VisionPillar,
+    VisionData,
+    FounderInfo,
+} from "@/types/about";
 
-export type ClientItem = {
-    id: number;
-    name: string;
-};
-
-export type StatItem = {
-    value: string;
-    label: string;
-};
-
-export type ConvictionPillar = {
-    id: number;
-    title: string;
-    icon: LucideIcon;
-};
-
-export type ConvictionData = {
-    badge: string;
-    title: string;
-    titleGradient: string;
-    description: string;
-    vision?: string;
-    quote?: string;
-    pillars: ConvictionPillar[];
+export type {
+    WhatWeDoItem,
+    ClientItem,
+    StatItem,
+    ConvictionPillar,
+    ConvictionData,
+    VisionPillar,
+    VisionData,
+    FounderInfo,
 };
 
 export const OUR_CONVICTION: ConvictionData = {
@@ -56,39 +50,31 @@ export const OUR_CONVICTION: ConvictionData = {
         {
             id: 1,
             title: "Créer des connexions durables",
+            description: "Favoriser les synergies entre entrepreneurs, institutions et partenaires financiers.",
             icon: Handshake,
         },
         {
             id: 2,
             title: "Renforcer les capacités",
+            description: "Outiller les acteurs locaux avec des expertises stratégiques d'excellence.",
             icon: GraduationCap,
         },
         {
             id: 3,
             title: "Accélérer les transformations",
+            description: "Transformer les idées à haut potentiel en projets concrets sur le terrain.",
             icon: Zap,
         },
         {
             id: 4,
             title: "Produire un impact mesurable",
+            description: "Garantir des résultats tangibles et durables pour les communautés.",
             icon: BarChart3,
         },
     ],
 };
 
-export type VisionPillar = ConvictionPillar;
-export type VisionData = ConvictionData;
 export const OUR_VISION = OUR_CONVICTION;
-
-
-export type FounderInfo = {
-    name: string;
-    role: string;
-    title: string;
-    image: string;
-    bio: string[];
-    skills: string[];
-};
 
 export const WHAT_WE_DO: WhatWeDoItem[] = [
     {
@@ -129,15 +115,15 @@ export const WHAT_WE_DO: WhatWeDoItem[] = [
 ];
 
 export const CLIENTS: ClientItem[] = [
-    { id: 1, name: "Startups" },
-    { id: 2, name: "PME" },
-    { id: 3, name: "Incubateurs" },
-    { id: 4, name: "Institutions publiques" },
-    { id: 5, name: "Collectivités" },
-    { id: 6, name: "Bailleurs de fonds" },
-    { id: 7, name: "ONG" },
-    { id: 8, name: "Universités" },
-    { id: 9, name: "Investisseurs" },
+    { id: 1, name: "Startups", icon: Rocket },
+    { id: 2, name: "PME", icon: Briefcase },
+    { id: 3, name: "Incubateurs", icon: Lightbulb },
+    { id: 4, name: "Institutions publiques", icon: Landmark },
+    { id: 5, name: "Collectivités", icon: Users },
+    { id: 6, name: "Bailleurs de fonds", icon: Banknote },
+    { id: 7, name: "ONG", icon: Heart },
+    { id: 8, name: "Universités", icon: GraduationCap },
+    { id: 9, name: "Investisseurs", icon: TrendingUp },
 ];
 
 export const ABOUT_STATS: StatItem[] = [
@@ -150,7 +136,7 @@ export const FOUNDER_INFO: FounderInfo = {
     name: "Fatoumata Niang",
     role: "Fondatrice",
     title: "Fondatrice & Directrice Générale — FANI IMPACT LAB",
-    image: "/images/fondatrice.png",
+    image: "/images/fondatrice.jpeg",
     bio: [
         "Passionnée par l'entrepreneuriat et le développement, Fatoumata Niang a fondé FANI IMPACT LAB avec une vision claire : bâtir un cabinet de conseil capable de répondre aux besoins réels des organisations africaines, avec rigueur, créativité et profondeur.",
 

@@ -1,11 +1,8 @@
 import { Lightbulb, Network, GraduationCap, FlaskConical, type LucideIcon } from "lucide-react";
 
-export type Service = {
-    id: number;
-    title: string;
-    list: { id: number; name: string }[];
-    icon: LucideIcon;
-};
+import type { Service, ServiceListItem } from "@/types/service";
+
+export type { Service, ServiceListItem };
 
 export const SERVICES: Service[] = [
     {

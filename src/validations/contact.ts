@@ -40,4 +40,4 @@ export const contactSchema = z.object({
     .max(1000, "Le message ne peut pas dépasser 1000 caractères."),
 });
 
-export type ContactFormData = z.infer<typeof contactSchema>;
+export type { ContactFormData } from "@/types/contact";
