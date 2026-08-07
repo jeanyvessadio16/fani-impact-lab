@@ -63,18 +63,11 @@ export default function HeaderNavbar() {
                         ))}
                     </nav>
 
-                    {/* Action CTA & Mobile Toggle */}
-                    <div className="flex items-center gap-3">
-                        <Link
-                            href="/contact"
-                            className="hidden sm:inline-flex items-center justify-center bg-orange-700 hover:bg-orange-800 text-white rounded-full px-5 py-2 text-sm font-semibold shadow-xs transition-all hover:scale-[1.02] active:scale-[0.98]"
-                        >
-                            Prendre RDV
-                        </Link>
-
+                    {/* Mobile Toggle */}
+                    <div className="md:hidden flex items-center">
                         <button
                             type="button"
-                            className="md:hidden p-2 text-stone-700 hover:text-orange-700 hover:bg-stone-100 rounded-lg transition-colors cursor-pointer"
+                            className="p-2 text-stone-700 hover:text-orange-700 hover:bg-stone-100 rounded-lg transition-colors cursor-pointer"
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             aria-label="Menu de navigation"
                         >
@@ -129,15 +122,7 @@ export default function HeaderNavbar() {
                             </ul>
                         </nav>
 
-                        <div className="pt-6 border-t border-stone-100 flex flex-col gap-3">
-                            <Link
-                                href="/contact"
-                                onClick={() => setIsMenuOpen(false)}
-                                className="w-full text-center bg-orange-700 hover:bg-orange-800 text-white rounded-xl py-3 text-sm font-semibold shadow-sm transition-colors"
-                            >
-                                Prendre RDV
-                            </Link>
-                        </div>
+
                     </div>
                 </div>
             )}

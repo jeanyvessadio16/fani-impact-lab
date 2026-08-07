@@ -4,7 +4,6 @@ import { Sparkles, ArrowRight, Quote } from "lucide-react";
 import { WHAT_WE_DO, CLIENTS, FOUNDER_INFO } from "@/data/about";
 import ConvictionSection from "@/components/shared/ConvictionSection";
 import MethodSection from "@/components/shared/MethodSection";
-import WhyChooseUsSection from "@/components/shared/WhyChooseUsSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -85,10 +84,7 @@ export default function APropos() {
             {/* ============================================================ */}
             <MethodSection />
 
-            {/* ============================================================ */}
-            {/* POURQUOI NOUS CHOISIR / BILAN D'IMPACT                        */}
-            {/* ============================================================ */}
-            <WhyChooseUsSection />
+
 
 
 

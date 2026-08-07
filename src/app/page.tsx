@@ -2,8 +2,6 @@ import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
 import { SERVICES } from "@/data/service";
-import ConvictionSection from "@/components/shared/ConvictionSection";
-import MethodSection from "@/components/shared/MethodSection";
 import WhyChooseUsSection from "@/components/shared/WhyChooseUsSection";
 import {
   Card,
@@ -149,12 +147,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Section Notre Conviction */}
-      <ConvictionSection />
-
-      {/* Section Notre Méthode */}
-      <MethodSection />
 
       {/* Section Pourquoi Nous Choisir */}
       <WhyChooseUsSection />
