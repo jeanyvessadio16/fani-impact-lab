@@ -18,9 +18,9 @@ export default function ConvictionSection({
       <div className="relative z-10 w-full px-6 md:px-12 max-w-7xl mx-auto flex flex-col gap-12">
         {/* En-tête de la section */}
         <div className="flex flex-col gap-4 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-100/80 border border-orange-200 text-orange-800 text-xs font-semibold tracking-widest uppercase w-fit">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100/80 border border-orange-200 text-orange-900 text-xs font-bold tracking-widest uppercase w-fit">
             <Sparkles className="size-3.5 text-orange-600" />
-            {data.badge}
+            <span>{data.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-stone-950 leading-tight">
             {data.title}{" "}
@@ -33,28 +33,28 @@ export default function ConvictionSection({
         {/* Bloc Conviction vs Vision en 2 cartes distinctes et intuitives */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Bloc Conviction */}
-          <div className="flex flex-col gap-4 p-8 rounded-2xl bg-white border border-stone-200/90 shadow-xs relative overflow-hidden group hover:border-orange-300 transition-all">
+          <div className="flex flex-col gap-4 p-8 rounded-2xl bg-white border border-stone-200 shadow-xs relative overflow-hidden group hover:border-orange-300 transition-all">
             <div className="flex items-center justify-between">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-800 text-xs font-bold uppercase">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-900 text-xs font-bold uppercase">
                 <Quote className="size-3.5 text-orange-600" />
                 Notre Conviction
               </div>
             </div>
-            <blockquote className="text-base sm:text-lg text-stone-800 font-semibold leading-relaxed italic pt-1">
+            <blockquote className="text-base sm:text-lg text-stone-900 font-semibold leading-relaxed italic pt-1">
               &ldquo;{data.description}&rdquo;
             </blockquote>
           </div>
 
           {/* Bloc Vision */}
           {data.vision && (
-            <div className="flex flex-col gap-4 p-8 rounded-2xl bg-white border border-stone-200/90 shadow-xs relative overflow-hidden group hover:border-orange-300 transition-all">
+            <div className="flex flex-col gap-4 p-8 rounded-2xl bg-white border border-stone-200 shadow-xs relative overflow-hidden group hover:border-orange-300 transition-all">
               <div className="flex items-center justify-between">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-800 text-xs font-bold uppercase">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-900 text-xs font-bold uppercase">
                   <Target className="size-3.5 text-orange-600" />
                   Notre Vision
                 </div>
               </div>
-              <p className="text-base sm:text-lg text-stone-800 font-semibold leading-relaxed pt-1">
+              <p className="text-base sm:text-lg text-stone-900 font-semibold leading-relaxed pt-1">
                 {data.vision}
               </p>
             </div>
@@ -76,14 +76,14 @@ export default function ConvictionSection({
               return (
                 <div
                   key={pillar.id}
-                  className="group relative flex flex-col justify-between gap-5 p-7 rounded-2xl border border-stone-200/90 bg-white shadow-xs transition-all duration-200 hover:border-orange-300 hover:shadow-md hover:-translate-y-1"
+                  className="group relative flex flex-col justify-between gap-5 p-7 rounded-2xl border border-stone-200 bg-white shadow-xs transition-all duration-200 hover:border-orange-300 hover:shadow-md hover:-translate-y-1"
                 >
                   <div className="flex flex-col gap-4">
                     <div className="flex items-center justify-between">
-                      <div className="inline-flex items-center justify-center size-12 rounded-xl bg-orange-50 border border-orange-200/80 text-orange-700 transition-colors group-hover:bg-orange-100/80 shrink-0">
+                      <div className="inline-flex items-center justify-center size-12 rounded-xl bg-orange-50 border border-orange-200 text-orange-700 transition-colors group-hover:bg-orange-100/80 shrink-0">
                         <Icon className="size-6" />
                       </div>
-                      <span className="text-xs font-mono text-stone-500 font-bold tabular-nums select-none">
+                      <span className="text-xs font-mono text-stone-700 font-bold tabular-nums select-none">
                         0{pillar.id}
                       </span>
                     </div>
@@ -92,7 +92,7 @@ export default function ConvictionSection({
                       <h4 className="text-base font-extrabold text-stone-900 tracking-tight leading-snug">
                         {pillar.title}
                       </h4>
-                      <p className="text-sm text-stone-600 leading-relaxed font-normal">
+                      <p className="text-sm text-stone-700 leading-relaxed font-normal">
                         {pillar.description}
                       </p>
                     </div>
@@ -108,3 +108,4 @@ export default function ConvictionSection({
     </section>
   );
 }
+
