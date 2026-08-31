@@ -23,9 +23,9 @@ export default function APropos() {
             {/* HERO SECTION                                                  */}
             {/* ============================================================ */}
             <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-stone-950 text-white border-b border-stone-800">
-                {/* Arrière-plan avec Image claire et bien visible */}
+                {/* Arrière-plan avec Image claire et bien visible en position fixe (effet parallaxe) */}
                 <div
-                    className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-50 scale-105"
+                    className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-50"
                     style={{ backgroundImage: "url('/images/about-hero.png')" }}
                 />
 

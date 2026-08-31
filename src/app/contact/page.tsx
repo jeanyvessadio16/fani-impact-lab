@@ -14,9 +14,9 @@ export default function ContactPage() {
             {/* HERO SECTION CONTACT                                         */}
             {/* ============================================================ */}
             <section className="relative min-h-[48vh] flex items-center justify-center overflow-hidden bg-stone-950 text-white border-b border-stone-800">
-                {/* Arrière-plan avec Image claire et bien visible */}
+                {/* Arrière-plan avec Image claire et bien visible en position fixe (effet parallaxe) */}
                 <div
-                    className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-50 scale-105"
+                    className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-50"
                     style={{ backgroundImage: "url('/images/contact-hero.png')" }}
                 />
 
