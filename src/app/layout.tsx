@@ -13,7 +13,7 @@ const poppins = Poppins({
 });
 
 // URL du site de production avec repli vers l'adresse canonique par défaut
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://fanimpactlab.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://fanimpactlab.vercel.app";
 
 /**
  * Métadonnées globales par défaut pour l'ensemble du site FANI IMPACT LAB.
@@ -112,7 +112,7 @@ const jsonLd = {
   },
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+221 76 141 70 70",
+    "telephone": "+221 78 603 20 20",
     "contactType": "customer service",
     "email": "info@acceent.org",
     "availableLanguage": ["French"],
