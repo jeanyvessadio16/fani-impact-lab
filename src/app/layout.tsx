@@ -13,7 +13,7 @@ const poppins = Poppins({
 });
 
 // URL du site de production avec repli vers l'adresse canonique par défaut
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://faniimpactlab.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://fanimpactlab.com";
 
 /**
  * Métadonnées globales par défaut pour l'ensemble du site FANI IMPACT LAB.

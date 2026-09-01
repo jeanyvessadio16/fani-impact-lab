@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         title: "Nous contacter | FANI IMPACT LAB - Ziguinchor & Sénégal",
         description:
             "Une question, une idée ou un projet à fort impact ? Contactez l'équipe de FANI IMPACT LAB.",
-        url: "https://faniimpactlab.com/contact",
+        url: "https://fanimpactlab.com/contact",
         images: [
             {
                 url: "/logo/FIL-LOGO.png",

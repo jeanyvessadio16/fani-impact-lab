@@ -1,6 +1,7 @@
 import React from "react";
 import { Sparkles, CheckCircle2, Check } from "lucide-react";
 import { WHY_CHOOSE_US, type WhyChooseUsData } from "@/data/about";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/animated";
 
 interface WhyChooseUsSectionProps {
   data?: WhyChooseUsData;
@@ -18,7 +19,7 @@ export default function WhyChooseUsSection({
     >
       <div className="relative z-10 w-full px-6 md:px-12 max-w-7xl mx-auto flex flex-col gap-10">
         {/* En-tête de section */}
-        <div className="flex flex-col gap-3.5 max-w-3xl">
+        <FadeIn direction="up" className="flex flex-col gap-3.5 max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold tracking-widest uppercase w-fit">
             <Sparkles className="size-3.5 text-amber-600" />
             <span>{data.badge}</span>
@@ -32,33 +33,32 @@ export default function WhyChooseUsSection({
           <p className="text-base sm:text-lg text-stone-800 leading-relaxed font-medium">
             {data.subtitle}
           </p>
-        </div>
+        </FadeIn>
 
         {/* Grille compacte des items de la liste validée */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {data.items.map((item) => (
-            <div
-              key={item.id}
-              className="group flex items-center justify-between p-5 rounded-2xl border border-stone-200 bg-white shadow-2xs transition-all duration-200 hover:border-emerald-500 hover:shadow-sm hover:-translate-y-0.5"
-            >
-              {/* Gauche: Icône coche + Titre */}
-              <div className="flex items-center gap-3.5">
-                <div className="inline-flex items-center justify-center size-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 transition-colors group-hover:bg-emerald-100 shrink-0">
-                  <CheckCircle2 className="size-5 text-emerald-700" />
+            <StaggerItem key={item.id}>
+              <div className="group flex items-center justify-between p-5 rounded-2xl border border-stone-200 bg-white shadow-2xs transition-all duration-200 hover:border-emerald-500 hover:shadow-sm hover:-translate-y-0.5">
+                {/* Gauche: Icône coche + Titre */}
+                <div className="flex items-center gap-3.5">
+                  <div className="inline-flex items-center justify-center size-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 transition-colors group-hover:bg-emerald-100 shrink-0">
+                    <CheckCircle2 className="size-5 text-emerald-700" />
+                  </div>
+                  <span className="text-base font-extrabold text-stone-950 tracking-tight group-hover:text-emerald-800 transition-colors">
+                    {item.title}
+                  </span>
                 </div>
-                <span className="text-base font-extrabold text-stone-950 tracking-tight group-hover:text-emerald-800 transition-colors">
-                  {item.title}
-                </span>
-              </div>
 
-              {/* Droite: Tag de validation */}
-              <div className="hidden xs:inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-[11px] font-bold">
-                <Check className="size-3 stroke-[3]" />
-                <span>Validé</span>
+                {/* Droite: Tag de validation */}
+                <div className="hidden xs:inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-[11px] font-bold">
+                  <Check className="size-3 stroke-[3]" />
+                  <span>Validé</span>
+                </div>
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );
