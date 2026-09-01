@@ -4,7 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
 import { SERVICES } from "@/data/service";
 import WhyChooseUsSection from "@/components/shared/WhyChooseUsSection";
-import { FadeIn, ScaleIn, StaggerContainer, StaggerItem } from "@/components/ui/animated";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/animated";
 import {
   Card,
   CardHeader,

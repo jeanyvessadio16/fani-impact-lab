@@ -7,7 +7,7 @@ import type { MetadataRoute } from "next";
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   // Domaine principal de l'application (configuré via variable d'environnement ou valeur par défaut)
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://fanimpactlab.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://fanimpactlab.vercel.app";
   const currentDate = new Date();
 
   return [

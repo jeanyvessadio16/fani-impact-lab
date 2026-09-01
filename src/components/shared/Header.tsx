@@ -39,8 +39,8 @@ export default function HeaderNavbar() {
         <>
             <header
                 className={`fixed top-0 left-0 right-0 w-full z-40 transition-all duration-300 ${scrolled
-                    ? "bg-white backdrop-blur-md border-b border-stone-200 shadow-xs py-3 px-6 md:px-12"
-                    : "bg-white backdrop-blur-sm border-b border-stone-200/80 py-4 px-6 md:px-12"
+                    ? "bg-white/95 backdrop-blur-md border-b border-stone-200 shadow-xs py-3 px-6 md:px-12"
+                    : "bg-white/90 backdrop-blur-sm border-b border-stone-200/80 py-4 px-6 md:px-12"
                     }`}
             >
                 <div className="max-w-7xl mx-auto flex justify-between items-center gap-4">
@@ -49,12 +49,12 @@ export default function HeaderNavbar() {
                         href="/"
                         className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 rounded-lg"
                     >
-                        <div className="relative overflow-hidden rounded-lg p-1 bg-blue-50/80 border border-blue-200/80 group-hover:border-blue-400 transition-colors">
+                        <div className="relative overflow-hidden rounded-lg p-1 border group-hover:border-blue-400 transition-colors">
                             <Image
-                                src="/logo/FIL-LOGO.png"
+                                src="/logo/logo-fil.png"
                                 alt="Logo FANI IMPACT LAB"
-                                width={42}
-                                height={42}
+                                width={80}
+                                height={80}
                                 className="object-contain transition-transform duration-300 group-hover:scale-105"
                                 priority
                             />

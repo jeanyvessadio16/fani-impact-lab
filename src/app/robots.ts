@@ -7,7 +7,7 @@ import type { MetadataRoute } from "next";
  */
 export default function robots(): MetadataRoute.Robots {
   // Domaine de base de l'application
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://fanimpactlab.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://fanimpactlab.vercel.app";
 
   return {
     rules: {

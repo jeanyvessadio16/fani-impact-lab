@@ -30,18 +30,15 @@ export default function Footer() {
           <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-1">
             {/* Logo + nom */}
             <Link href="/" className="flex items-center gap-3 group w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg">
-              <div className="relative overflow-hidden rounded-lg p-1 bg-blue-950 border border-blue-900 group-hover:border-amber-500/60 transition-colors">
+              <div className="relative overflow-hidden rounded-lg p-1 bg-white border border-blue-900 group-hover:border-amber-500/60 transition-colors">
                 <Image
-                  src="/logo/FIL-LOGO.png"
+                  src="/logo/logo-fil.png"
                   alt="Logo FANI IMPACT LAB"
-                  width={40}
-                  height={40}
+                  width={80}
+                  height={80}
                   className="object-contain transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-              <span className="font-extrabold text-white text-base tracking-tight">
-                FANI <span className="text-amber-400">IMPACT</span> LAB
-              </span>
             </Link>
 
             {/* Tagline */}
