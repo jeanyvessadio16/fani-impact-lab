@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
@@ -10,6 +11,45 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
+
+export const metadata: Metadata = {
+  title: "Accueil | FANI IMPACT LAB - Cabinet de Conseil Stratégique & Innovation",
+  description:
+    "FANI IMPACT LAB accompagne les entrepreneurs, institutions, collectivités et PME dans la transformation de leurs idées en projets à fort impact au Sénégal et en Afrique.",
+  keywords: [
+    "FANI IMPACT LAB",
+    "Conseil stratégique Sénégal",
+    "Accompagnement entrepreneuriat Ziguinchor",
+    "Développement des écosystèmes Afrique",
+    "Advisory PME Sénégal",
+    "Academy leadership Afrique",
+    "Etudes et diagnostics territoriaux",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Accueil | FANI IMPACT LAB - Conseil Stratégique & Innovation",
+    description:
+      "Transformez vos idées en projets d'impact. FANI IMPACT LAB accompagne les entrepreneurs, institutions et organisations au Sénégal et en Afrique.",
+    url: "https://faniimpactlab.com",
+    images: [
+      {
+        url: "/logo/FIL-LOGO.png",
+        width: 1200,
+        height: 630,
+        alt: "FANI IMPACT LAB - Accompagnement & Conseil Stratégique",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FANI IMPACT LAB - Conseil Stratégique & Innovation",
+    description:
+      "Transformez vos idées en projets d'impact. FANI IMPACT LAB accompagne les entrepreneurs, institutions et organisations au Sénégal et en Afrique.",
+    images: ["/logo/FIL-LOGO.png"],
+  },
+};
 
 export default function Home() {
   return (

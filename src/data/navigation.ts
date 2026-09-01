@@ -18,7 +18,7 @@ export const FOOTER_SERVICES_LINKS: NavLink[] = [
 
 export const COMPANY_CONTACT: CompanyContact = {
     email: "info@acceent.org",
-    phone: "+221 76 141 70 70",
+    phone: "+221 78 603 20 20",
     address: "Santhiaba, Ziguinchor — Sénégal",
     locationShort: "Santhiaba, Ziguinchor",
     country: "Sénégal",

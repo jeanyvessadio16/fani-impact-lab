@@ -7,9 +7,43 @@ import MethodSection from "@/components/shared/MethodSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "À propos – FANI IMPACT LAB",
+  title: "À propos | Vision, Méthode Le FIL & Fondatrice Fatoumata Niang",
+  description:
+    "Découvrez l'histoire, la vision, la méthode 'Le FIL' et la fondatrice de FANI IMPACT LAB, Fatoumata Niang. Un cabinet dédié à l'entrepreneuriat et au développement des écosystèmes en Afrique.",
+  keywords: [
+    "À propos FANI IMPACT LAB",
+    "Fatoumata Niang fondatrice",
+    "Vision entrepreneuriat Afrique",
+    "Méthode Le FIL",
+    "Fédérer Innover Libérer l'impact",
+    "Écosystèmes entrepreneuriaux Sénégal",
+    "Startup Act Sénégal contributeur",
+    "Conseil stratégique Casamance Ziguinchor",
+  ],
+  alternates: {
+    canonical: "/a-propos",
+  },
+  openGraph: {
+    title: "À propos de FANI IMPACT LAB | Vision & Fondatrice Fatoumata Niang",
     description:
-        "Découvrez qui nous sommes, notre vision, ce que nous faisons et la fondatrice de FANI IMPACT LAB.",
+      "Cabinet de conseil stratégique engagé dans le développement des écosystèmes et l'accompagnement d'impact au Sénégal et en Afrique.",
+    url: "https://faniimpactlab.com/a-propos",
+    images: [
+      {
+        url: "/images/fondatrice.jpeg",
+        width: 800,
+        height: 1000,
+        alt: "Fatoumata Niang - Fondatrice FANI IMPACT LAB",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "À propos de FANI IMPACT LAB | Vision & Fondatrice Fatoumata Niang",
+    description:
+      "Cabinet de conseil stratégique engagé dans le développement des écosystèmes et l'accompagnement d'impact au Sénégal et en Afrique.",
+    images: ["/images/fondatrice.jpeg"],
+  },
 };
 
 /* ------------------------------------------------------------------ */
