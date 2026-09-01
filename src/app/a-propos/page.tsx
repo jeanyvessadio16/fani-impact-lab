@@ -22,28 +22,28 @@ export default function APropos() {
             {/* ============================================================ */}
             {/* HERO SECTION                                                  */}
             {/* ============================================================ */}
-            <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-stone-950 text-white border-b border-stone-800">
+            <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-[#061224] text-white border-b border-blue-950">
                 {/* Arrière-plan avec Image claire et bien visible en position fixe (effet parallaxe) */}
                 <div
                     className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-50"
                     style={{ backgroundImage: "url('/images/about-hero.png')" }}
                 />
 
-                {/* Masque de lisibilité sombre uni et net (sans dégradé parasite) */}
-                <div className="absolute inset-0 z-0 bg-stone-950/80" />
+                {/* Masque de lisibilité sombre uni aux reflets bleu marine */}
+                <div className="absolute inset-0 z-0 bg-[#071326]/85" />
 
                 {/* Content */}
                 <div className="relative z-10 w-full min-h-screen px-6 md:px-12 flex flex-col justify-center items-center gap-5">
                     {/* Badge */}
-                    <div className="inline-flex items-center gap-2 px-4 py-2 mt-16 rounded-full bg-orange-500/20 border border-orange-400/40 backdrop-blur-md text-orange-200 text-xs sm:text-sm font-bold tracking-wide w-fit">
-                        <Sparkles className="size-4 text-orange-400 animate-pulse" />
+                    <div className="inline-flex items-center gap-2 px-4 py-2 mt-16 rounded-full bg-blue-900/60 border border-blue-700/60 backdrop-blur-md text-amber-300 text-xs sm:text-sm font-bold tracking-wide w-fit">
+                        <Sparkles className="size-4 text-amber-400 animate-pulse" />
                         <span>Qui sommes-nous ?</span>
                     </div>
 
                     {/* Heading */}
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] max-w-3xl">
                         Un cabinet{" "}
-                        <span className="text-orange-400">
+                        <span className="text-amber-400">
                             de conseil
                         </span>{" "}
                         au service de l&apos;Afrique
@@ -58,10 +58,10 @@ export default function APropos() {
                     <div className="flex flex-wrap items-center gap-4 pt-2">
                         <Link
                             href="#conviction"
-                            className="inline-flex items-center gap-2.5 h-12 px-7 text-sm font-semibold bg-orange-600 hover:bg-orange-700 text-white rounded-xl shadow-md transition-all hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950"
+                            className="inline-flex items-center gap-2.5 h-12 px-7 text-sm font-semibold bg-[#0B1E3D] hover:bg-[#122B52] text-white border border-blue-700/60 rounded-xl shadow-md transition-all hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950"
                         >
                             Notre vision
-                            <ArrowRight className="size-4" />
+                            <ArrowRight className="size-4 text-amber-400" />
                         </Link>
                         <Link
                             href="#fondatrice"
@@ -93,13 +93,13 @@ export default function APropos() {
                 <div className="relative z-10 w-full px-6 md:px-12 max-w-7xl mx-auto">
                     {/* Header */}
                     <div className="mb-16 flex flex-col gap-4 max-w-2xl">
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100/80 border border-orange-200 text-orange-900 text-xs font-bold tracking-widest uppercase w-fit">
-                            <Sparkles className="size-3.5 text-orange-600" />
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold tracking-widest uppercase w-fit">
+                            <Sparkles className="size-3.5 text-amber-600" />
                             <span>Nos domaines d&apos;intervention</span>
                         </div>
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-stone-950 leading-tight">
                             Ce que nous{" "}
-                            <span className="text-orange-700">
+                            <span className="text-blue-900">
                                 faisons
                             </span>
                         </h2>
@@ -115,11 +115,11 @@ export default function APropos() {
                             return (
                                 <div
                                     key={item.id}
-                                    className="group relative flex flex-col gap-4 p-6 rounded-2xl border border-stone-200 bg-white shadow-xs transition-all duration-200 hover:border-orange-300 hover:shadow-md hover:-translate-y-1"
+                                    className="group relative flex flex-col gap-4 p-6 rounded-2xl border border-stone-200 bg-white shadow-xs transition-all duration-200 hover:border-blue-400 hover:shadow-md hover:-translate-y-1"
                                 >
                                     {/* Icon + numéro */}
                                     <div className="flex items-center justify-between">
-                                        <div className="inline-flex items-center justify-center size-12 rounded-xl bg-orange-50 border border-orange-200 text-orange-700 transition-colors group-hover:bg-orange-100/80 shrink-0">
+                                        <div className="inline-flex items-center justify-center size-12 rounded-xl bg-blue-50 border border-blue-200 text-blue-900 transition-colors group-hover:bg-blue-900 group-hover:text-white shrink-0">
                                             <Icon className="size-6" />
                                         </div>
                                         <span className="text-xs font-mono text-stone-700 font-bold tabular-nums select-none">
@@ -132,7 +132,7 @@ export default function APropos() {
                                         <h3 className="text-lg font-extrabold text-stone-950 tracking-tight leading-snug">
                                             {item.title}
                                         </h3>
-                                        <div className="h-0.5 w-8 rounded-full bg-orange-600 transition-all duration-300 group-hover:w-14" />
+                                        <div className="h-0.5 w-8 rounded-full bg-amber-500 transition-all duration-300 group-hover:w-14" />
                                         <p className="text-sm text-stone-800 leading-relaxed mt-1 font-normal">
                                             {item.description}
                                         </p>
@@ -154,13 +154,13 @@ export default function APropos() {
                 <div className="relative z-10 w-full px-6 md:px-12 max-w-7xl mx-auto flex flex-col gap-12">
                     {/* Top – Header & Description */}
                     <div className="flex flex-col gap-4 max-w-3xl">
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100/80 border border-orange-200 text-orange-900 text-xs font-bold tracking-widest uppercase w-fit">
-                            <Sparkles className="size-3.5 text-orange-600" />
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold tracking-widest uppercase w-fit">
+                            <Sparkles className="size-3.5 text-amber-600" />
                             <span>Ceux qui nous font confiance</span>
                         </div>
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-stone-950 leading-tight">
                             Nos{" "}
-                            <span className="text-orange-700">
+                            <span className="text-blue-900">
                                 clients
                             </span>
                         </h2>
@@ -178,27 +178,27 @@ export default function APropos() {
                             return (
                                 <div
                                     key={client.id}
-                                    className="group flex items-center justify-between px-5 py-4 rounded-2xl border border-stone-200 bg-white shadow-2xs transition-all duration-200 hover:border-orange-300 hover:shadow-xs hover:-translate-y-0.5"
+                                    className="group flex items-center justify-between px-5 py-4 rounded-2xl border border-stone-200 bg-white shadow-2xs transition-all duration-200 hover:border-blue-400 hover:shadow-xs hover:-translate-y-0.5"
                                 >
                                     <div className="flex items-center gap-3.5">
-                                        <div className="inline-flex items-center justify-center size-9 rounded-xl bg-orange-50 border border-orange-200 text-orange-700 transition-colors group-hover:bg-orange-100/80 shrink-0">
+                                        <div className="inline-flex items-center justify-center size-9 rounded-xl bg-blue-50 border border-blue-200 text-blue-900 transition-colors group-hover:bg-blue-900 group-hover:text-white shrink-0">
                                             <Icon className="size-4.5" />
                                         </div>
-                                        <span className="text-sm font-bold text-stone-900 group-hover:text-orange-800 transition-colors">
+                                        <span className="text-sm font-bold text-stone-900 group-hover:text-blue-900 transition-colors">
                                             {client.name}
                                         </span>
                                     </div>
-                                    <div className="h-2 w-2 rounded-full bg-orange-600 group-hover:bg-orange-700 transition-colors" />
+                                    <div className="h-2 w-2 rounded-full bg-amber-500 group-hover:bg-amber-600 transition-colors" />
                                 </div>
                             );
                         })}
                     </div>
 
                     {/* Quote block */}
-                    <div className="mt-4 p-8 rounded-2xl bg-orange-50/70 border-l-4 border-orange-600 shadow-2xs flex flex-col sm:flex-row gap-5 items-start">
-                        <Quote className="size-8 text-orange-600 shrink-0 mt-1" />
+                    <div className="mt-4 p-8 rounded-2xl bg-blue-50/70 border-l-4 border-blue-900 shadow-2xs flex flex-col sm:flex-row gap-5 items-start">
+                        <Quote className="size-8 text-blue-900 shrink-0 mt-1" />
                         <blockquote className="text-base sm:text-lg text-stone-900 italic leading-relaxed font-medium">
-                            Les plus grands défis de l'Afrique ne seront pas résolus par une seule organisation, <span className="text-orange-900 font-extrabold not-italic">mais seront résolus par des écosystèmes</span>.
+                            Les plus grands défis de l'Afrique ne seront pas résolus par une seule organisation, <span className="text-blue-950 font-extrabold not-italic">mais seront résolus par des écosystèmes</span>.
                         </blockquote>
                     </div>
                 </div>
@@ -214,13 +214,13 @@ export default function APropos() {
                 <div className="relative z-10 w-full px-6 md:px-12 max-w-7xl mx-auto">
                     {/* Header */}
                     <div className="mb-16 flex flex-col gap-4 max-w-xl">
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100/80 border border-orange-200 text-orange-900 text-xs font-bold tracking-widest uppercase w-fit">
-                            <Sparkles className="size-3.5 text-orange-600" />
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold tracking-widest uppercase w-fit">
+                            <Sparkles className="size-3.5 text-amber-600" />
                             <span>La personne derrière FIL</span>
                         </div>
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-stone-950 leading-tight">
                             La{" "}
-                            <span className="text-orange-700">
+                            <span className="text-blue-900">
                                 fondatrice
                             </span>
                         </h2>
@@ -248,7 +248,7 @@ export default function APropos() {
                                         <p className="text-sm font-extrabold text-stone-950">
                                             {FOUNDER_INFO.name}
                                         </p>
-                                        <p className="text-xs text-orange-800 font-bold mt-0.5">
+                                        <p className="text-xs text-blue-900 font-bold mt-0.5">
                                             {FOUNDER_INFO.role}
                                         </p>
                                     </div>
@@ -262,10 +262,10 @@ export default function APropos() {
                                 <h3 className="text-2xl sm:text-3xl font-extrabold text-stone-950 tracking-tight">
                                     {FOUNDER_INFO.name}
                                 </h3>
-                                <p className="text-orange-700 font-bold text-sm tracking-wide">
+                                <p className="text-blue-900 font-bold text-sm tracking-wide">
                                     {FOUNDER_INFO.title}
                                 </p>
-                                <div className="h-0.5 w-12 rounded-full bg-orange-600 mt-1" />
+                                <div className="h-0.5 w-12 rounded-full bg-amber-500 mt-1" />
                             </div>
 
                             <div className="flex flex-col gap-4 text-stone-800 text-base leading-relaxed font-normal">
@@ -279,7 +279,7 @@ export default function APropos() {
                                 {FOUNDER_INFO.skills.map((tag) => (
                                     <span
                                         key={tag}
-                                        className="px-3.5 py-1 text-xs font-bold rounded-full bg-orange-100/80 border border-orange-200 text-orange-900"
+                                        className="px-3.5 py-1 text-xs font-bold rounded-full bg-blue-50 border border-blue-200 text-blue-950"
                                     >
                                         {tag}
                                     </span>
@@ -290,10 +290,10 @@ export default function APropos() {
                             <div className="flex flex-wrap gap-4 mt-4 pt-6 border-t border-stone-200">
                                 <Link
                                     href="/contact"
-                                    className="inline-flex items-center gap-2.5 h-12 px-7 text-sm font-semibold bg-orange-700 hover:bg-orange-800 text-white rounded-xl shadow-xs transition-all hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-600"
+                                    className="inline-flex items-center gap-2.5 h-12 px-7 text-sm font-semibold bg-[#0B1E3D] hover:bg-[#122B52] text-white rounded-xl shadow-xs transition-all hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                                 >
                                     Nous contacter
-                                    <ArrowRight className="size-4" />
+                                    <ArrowRight className="size-4 text-amber-400" />
                                 </Link>
                             </div>
                         </div>
@@ -306,14 +306,14 @@ export default function APropos() {
             {/* ============================================================ */}
             <section className="relative py-20 bg-white overflow-hidden">
                 <div className="relative z-10 w-full px-6 md:px-12 max-w-4xl mx-auto text-center flex flex-col items-center gap-7">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-100/80 border border-orange-200 text-orange-900 text-xs font-bold tracking-wide">
-                        <Sparkles className="size-3.5 text-orange-600 animate-pulse" />
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold tracking-wide">
+                        <Sparkles className="size-3.5 text-amber-600 animate-pulse" />
                         <span>Démarrons ensemble</span>
                     </div>
 
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-stone-950 leading-tight max-w-2xl">
                         Prêt à transformer votre{" "}
-                        <span className="text-orange-700">
+                        <span className="text-blue-900">
                             vision en impact ?
                         </span>
                     </h2>
@@ -325,10 +325,10 @@ export default function APropos() {
 
                     <Link
                         href="/contact"
-                        className="inline-flex items-center gap-2.5 h-13 px-9 text-base font-semibold bg-orange-700 hover:bg-orange-800 text-white rounded-xl shadow-sm transition-all hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-600"
+                        className="inline-flex items-center gap-2.5 h-13 px-9 text-base font-semibold bg-[#0B1E3D] hover:bg-[#122B52] text-white rounded-xl shadow-sm transition-all hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                     >
                         Prendre rendez-vous
-                        <ArrowRight className="size-5" />
+                        <ArrowRight className="size-5 text-amber-400" />
                     </Link>
                 </div>
             </section>

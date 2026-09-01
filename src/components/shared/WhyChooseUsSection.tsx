@@ -19,13 +19,13 @@ export default function WhyChooseUsSection({
       <div className="relative z-10 w-full px-6 md:px-12 max-w-7xl mx-auto flex flex-col gap-10">
         {/* En-tête de section */}
         <div className="flex flex-col gap-3.5 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100/80 border border-orange-200 text-orange-900 text-xs font-bold tracking-widest uppercase w-fit">
-            <Sparkles className="size-3.5 text-orange-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold tracking-widest uppercase w-fit">
+            <Sparkles className="size-3.5 text-amber-600" />
             <span>{data.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-stone-950 leading-tight">
             {data.title}{" "}
-            <span className="text-orange-700">
+            <span className="text-blue-900">
               {data.titleGradient}
             </span>
           </h2>

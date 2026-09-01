@@ -13,24 +13,24 @@ export default function ContactPage() {
             {/* ============================================================ */}
             {/* HERO SECTION CONTACT                                         */}
             {/* ============================================================ */}
-            <section className="relative min-h-[48vh] flex items-center justify-center overflow-hidden bg-stone-950 text-white border-b border-stone-800">
+            <section className="relative min-h-[48vh] flex items-center justify-center overflow-hidden bg-[#061224] text-white border-b border-blue-950">
                 {/* Arrière-plan avec Image claire et bien visible en position fixe (effet parallaxe) */}
                 <div
                     className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-50"
                     style={{ backgroundImage: "url('/images/contact-hero.png')" }}
                 />
 
-                {/* Masque de lisibilité sombre uni et net (sans dégradé parasite) */}
-                <div className="absolute inset-0 z-0 bg-stone-950/80" />
+                {/* Masque de lisibilité sombre uni aux reflets bleu marine */}
+                <div className="absolute inset-0 z-0 bg-[#071326]/85" />
 
                 <div className="relative z-10 w-full px-6 md:px-12 pt-32 pb-16 md:pt-40 md:pb-20 max-w-4xl mx-auto text-center flex flex-col items-center gap-4">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/20 border border-orange-400/40 backdrop-blur-md text-orange-200 text-xs sm:text-sm font-bold tracking-wide">
-                        <Sparkles className="size-4 text-orange-400 animate-pulse" />
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-900/60 border border-blue-700/60 backdrop-blur-md text-amber-300 text-xs sm:text-sm font-bold tracking-wide">
+                        <Sparkles className="size-4 text-amber-400 animate-pulse" />
                         <span>Prendre contact</span>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-                        Discutons de votre <span className="text-orange-400">projet</span>
+                        Discutons de votre <span className="text-amber-400">projet</span>
                     </h1>
 
                     <p className="text-base sm:text-lg text-stone-200 font-medium leading-relaxed max-w-xl">
@@ -59,7 +59,7 @@ export default function ContactPage() {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div className="flex flex-col gap-2">
                                     <Label htmlFor="firstname" className="text-stone-900 font-bold text-sm">
-                                        Prénom <span className="text-orange-700" aria-hidden="true">*</span>
+                                        Prénom <span className="text-amber-600" aria-hidden="true">*</span>
                                     </Label>
                                     <Input
                                         id="firstname"
@@ -67,13 +67,13 @@ export default function ContactPage() {
                                         required
                                         aria-required="true"
                                         placeholder="Votre prénom"
-                                        className="bg-white border-stone-300 text-stone-950 placeholder:text-stone-500 focus-visible:border-orange-600 focus-visible:ring-2 focus-visible:ring-orange-600/30 font-medium h-11"
+                                        className="bg-white border-stone-300 text-stone-950 placeholder:text-stone-500 focus-visible:border-blue-900 focus-visible:ring-2 focus-visible:ring-blue-900/20 font-medium h-11"
                                     />
                                 </div>
 
                                 <div className="flex flex-col gap-2">
                                     <Label htmlFor="lastname" className="text-stone-900 font-bold text-sm">
-                                        Nom <span className="text-orange-700" aria-hidden="true">*</span>
+                                        Nom <span className="text-amber-600" aria-hidden="true">*</span>
                                     </Label>
                                     <Input
                                         id="lastname"
@@ -81,7 +81,7 @@ export default function ContactPage() {
                                         required
                                         aria-required="true"
                                         placeholder="Votre nom"
-                                        className="bg-white border-stone-300 text-stone-950 placeholder:text-stone-500 focus-visible:border-orange-600 focus-visible:ring-2 focus-visible:ring-orange-600/30 font-medium h-11"
+                                        className="bg-white border-stone-300 text-stone-950 placeholder:text-stone-500 focus-visible:border-blue-900 focus-visible:ring-2 focus-visible:ring-blue-900/20 font-medium h-11"
                                     />
                                 </div>
                             </div>
@@ -90,7 +90,7 @@ export default function ContactPage() {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div className="flex flex-col gap-2">
                                     <Label htmlFor="phone" className="text-stone-900 font-bold text-sm">
-                                        Téléphone <span className="text-orange-700" aria-hidden="true">*</span>
+                                        Téléphone <span className="text-amber-600" aria-hidden="true">*</span>
                                     </Label>
                                     <Input
                                         id="phone"
@@ -98,13 +98,13 @@ export default function ContactPage() {
                                         required
                                         aria-required="true"
                                         placeholder="+221 77 000 00 00"
-                                        className="bg-white border-stone-300 text-stone-950 placeholder:text-stone-500 focus-visible:border-orange-600 focus-visible:ring-2 focus-visible:ring-orange-600/30 font-medium h-11"
+                                        className="bg-white border-stone-300 text-stone-950 placeholder:text-stone-500 focus-visible:border-blue-900 focus-visible:ring-2 focus-visible:ring-blue-900/20 font-medium h-11"
                                     />
                                 </div>
 
                                 <div className="flex flex-col gap-2">
                                     <Label htmlFor="email" className="text-stone-900 font-bold text-sm">
-                                        Email <span className="text-orange-700" aria-hidden="true">*</span>
+                                        Email <span className="text-amber-600" aria-hidden="true">*</span>
                                     </Label>
                                     <Input
                                         id="email"
@@ -112,7 +112,7 @@ export default function ContactPage() {
                                         required
                                         aria-required="true"
                                         placeholder="exemple@email.com"
-                                        className="bg-white border-stone-300 text-stone-950 placeholder:text-stone-500 focus-visible:border-orange-600 focus-visible:ring-2 focus-visible:ring-orange-600/30 font-medium h-11"
+                                        className="bg-white border-stone-300 text-stone-950 placeholder:text-stone-500 focus-visible:border-blue-900 focus-visible:ring-2 focus-visible:ring-blue-900/20 font-medium h-11"
                                     />
                                 </div>
                             </div>
@@ -120,7 +120,7 @@ export default function ContactPage() {
                             {/* Row 3: Message */}
                             <div className="flex flex-col gap-2">
                                 <Label htmlFor="message" className="text-stone-900 font-bold text-sm">
-                                    Message <span className="text-orange-700" aria-hidden="true">*</span>
+                                    Message <span className="text-amber-600" aria-hidden="true">*</span>
                                 </Label>
                                 <Textarea
                                     id="message"
@@ -128,7 +128,7 @@ export default function ContactPage() {
                                     aria-required="true"
                                     placeholder="Votre message..."
                                     rows={5}
-                                    className="bg-white border-stone-300 text-stone-950 placeholder:text-stone-500 focus-visible:border-orange-600 focus-visible:ring-2 focus-visible:ring-orange-600/30 font-medium"
+                                    className="bg-white border-stone-300 text-stone-950 placeholder:text-stone-500 focus-visible:border-blue-900 focus-visible:ring-2 focus-visible:ring-blue-900/20 font-medium"
                                 />
                             </div>
 
@@ -138,9 +138,9 @@ export default function ContactPage() {
                                     type="submit"
                                     variant="default"
                                     size="xl"
-                                    className="w-full bg-orange-700 hover:bg-orange-800 text-white font-semibold text-base py-3.5 h-13 rounded-xl shadow-xs transition-all cursor-pointer flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-600 focus-visible:ring-offset-2"
+                                    className="w-full bg-[#0B1E3D] hover:bg-[#122B52] text-white font-semibold text-base py-3.5 h-13 rounded-xl shadow-xs transition-all cursor-pointer flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                                 >
-                                    <Send className="size-4" />
+                                    <Send className="size-4 text-amber-400" />
                                     Envoyer le message
                                 </Button>
                             </CardFooter>

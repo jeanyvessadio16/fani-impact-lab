@@ -17,8 +17,8 @@ export const FOOTER_SERVICES_LINKS: NavLink[] = [
 ];
 
 export const COMPANY_CONTACT: CompanyContact = {
-    email: "contact@faniimpactlab.com",
-    phone: "+221 00 000 00 00",
+    email: "info@acceent.org",
+    phone: "+221 76 141 70 70",
     address: "Santhiaba, Ziguinchor — Sénégal",
     locationShort: "Santhiaba, Ziguinchor",
     country: "Sénégal",

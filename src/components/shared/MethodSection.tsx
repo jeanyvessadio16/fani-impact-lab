@@ -14,7 +14,7 @@ export default function MethodSection({
   return (
     <section
       id="notre-methode"
-      className={`relative py-14 sm:py-18 bg-stone-950 text-white border-y border-stone-800 overflow-hidden ${className}`}
+      className={`relative py-14 sm:py-18 bg-[#071326] text-white border-y border-blue-950 overflow-hidden ${className}`}
     >
       <div className="relative z-10 w-full px-6 md:px-12 max-w-6xl mx-auto flex flex-col gap-8 sm:gap-10">
         {/* En-tête compacte */}

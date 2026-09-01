@@ -15,28 +15,28 @@ export default function Home() {
   return (
     <main className="relative flex-1 bg-white">
       {/* Section Hero */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-stone-950 text-white border-b border-stone-800">
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#061224] text-white border-b border-blue-950">
         {/* Arrière-plan avec Image claire et bien visible en position fixe (effet parallaxe) */}
         <div
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-50"
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-40"
           style={{ backgroundImage: "url('/images/bg-fil.jpg')" }}
         />
 
-        {/* Masque de lisibilité sombre uni et net (sans dégradé parasite) */}
-        <div className="absolute inset-0 z-0 bg-stone-950/80" />
+        {/* Masque de lisibilité sombre uni aux reflets bleu marine */}
+        <div className="absolute inset-0 z-0 bg-[#071326]/85" />
 
         {/* Conteneur Hero */}
         <div className="relative z-10 w-full px-6 md:px-12 pt-32 pb-20 md:pt-40 md:pb-28 flex flex-col items-start space-y-7 max-w-7xl mx-auto">
 
           {/* Badge Pilule */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/20 border border-orange-400/40 backdrop-blur-md text-orange-200 text-xs sm:text-sm font-bold tracking-wide">
-            <Sparkles className="size-4 text-orange-400 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-900/60 border border-blue-700/60 backdrop-blur-md text-amber-300 text-xs sm:text-sm font-bold tracking-wide">
+            <Sparkles className="size-4 text-amber-400 animate-pulse" />
             <span>Bienvenue chez FIL</span>
           </div>
 
           {/* Titre Principal */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] max-w-4xl">
-            FANI IMPACT LAB
+            FANI <span className="text-amber-400">IMPACT</span> LAB
           </h1>
 
           {/* Description */}
@@ -51,11 +51,11 @@ export default function Home() {
               className={buttonVariants({
                 variant: "default",
                 className:
-                  "h-13 min-h-[48px] px-8 text-base font-semibold bg-orange-600 hover:bg-orange-700 text-white rounded-xl shadow-md transition-all hover:scale-[1.02] active:scale-[0.98] gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950",
+                  "h-13 min-h-[48px] px-8 text-base font-semibold bg-[#0B1E3D] hover:bg-[#122B52] text-white border border-blue-700/60 rounded-xl shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98] gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950",
               })}
             >
               <span>Découvrez nos offres</span>
-              <ArrowRight className="size-5" />
+              <ArrowRight className="size-5 text-amber-400" />
             </Link>
 
             <Link
@@ -78,13 +78,13 @@ export default function Home() {
 
           {/* En-tête de section */}
           <div className="mb-14 flex flex-col gap-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100/80 border border-orange-200 text-orange-900 text-xs font-bold tracking-widest uppercase w-fit">
-              <Sparkles className="size-3.5 text-orange-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold tracking-widest uppercase w-fit">
+              <Sparkles className="size-3.5 text-amber-600" />
               <span>Ce que nous faisons</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-stone-950 leading-tight max-w-2xl">
               Nos{" "}
-              <span className="text-orange-700">
+              <span className="text-blue-900">
                 offres
               </span>
             </h2>
@@ -100,12 +100,12 @@ export default function Home() {
               return (
                 <Card
                   key={service.id}
-                  className="group relative flex flex-col border-stone-200 bg-white transition-all duration-200 hover:border-orange-300 hover:shadow-md hover:-translate-y-1 rounded-2xl shadow-2xs"
+                  className="group relative flex flex-col border-stone-200 bg-white transition-all duration-200 hover:border-blue-400 hover:shadow-md hover:-translate-y-1 rounded-2xl shadow-2xs"
                 >
                   <CardHeader className="pb-2">
                     {/* Numéro + icône */}
                     <div className="flex items-center justify-between mb-3">
-                      <div className="inline-flex items-center justify-center size-11 rounded-xl bg-orange-50 border border-orange-200 text-orange-700 transition-colors group-hover:bg-orange-100/80">
+                      <div className="inline-flex items-center justify-center size-11 rounded-xl bg-blue-50 border border-blue-200 text-blue-900 transition-colors group-hover:bg-blue-900 group-hover:text-white">
                         <Icon className="size-5" />
                       </div>
                       <span className="text-xs font-mono text-stone-700 font-bold tabular-nums select-none">
@@ -117,7 +117,7 @@ export default function Home() {
                     <CardTitle className="text-base font-extrabold text-stone-950 tracking-tight leading-snug">
                       {service.title}
                     </CardTitle>
-                    <div className="h-0.5 w-8 rounded-full bg-orange-600 transition-all duration-300 group-hover:w-14 mt-1" />
+                    <div className="h-0.5 w-8 rounded-full bg-amber-500 transition-all duration-300 group-hover:w-14 mt-1" />
                   </CardHeader>
 
                   <CardContent className="flex-1 pt-2">
@@ -127,7 +127,7 @@ export default function Home() {
                           key={item.id}
                           className="flex items-start gap-2.5 text-sm text-stone-800 transition-colors font-normal"
                         >
-                          <CheckCircle2 className="size-4 mt-0.5 shrink-0 text-orange-600" />
+                          <CheckCircle2 className="size-4 mt-0.5 shrink-0 text-blue-900" />
                           <span className="leading-snug">{item.name}</span>
                         </li>
                       ))}
@@ -138,7 +138,7 @@ export default function Home() {
                     <span className="text-xs font-semibold text-stone-700">
                       {service.list.length} prestation{service.list.length > 1 ? "s" : ""}
                     </span>
-                    <ArrowRight className="size-4 text-orange-700 transition-all duration-200 group-hover:translate-x-0.5" />
+                    <ArrowRight className="size-4 text-blue-900 transition-all duration-200 group-hover:translate-x-0.5" />
                   </CardFooter>
                 </Card>
               );
@@ -156,13 +156,13 @@ export default function Home() {
 
           {/* En-tête de section */}
           <div className="mb-14 flex flex-col gap-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100/80 border border-orange-200 text-orange-900 text-xs font-bold tracking-widest uppercase w-fit">
-              <Sparkles className="size-3.5 text-orange-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold tracking-widest uppercase w-fit">
+              <Sparkles className="size-3.5 text-amber-600" />
               <span>Où nous trouver</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-stone-950 leading-tight max-w-2xl">
               Où{" "}
-              <span className="text-orange-700">
+              <span className="text-blue-900">
                 trouver FIL
               </span>
             </h2>
@@ -173,11 +173,11 @@ export default function Home() {
 
           {/* Carte de localisation */}
           <Card
-            className="group relative flex flex-col border-stone-200 bg-white transition-all duration-200 hover:border-orange-300 hover:shadow-md max-w-md rounded-2xl shadow-2xs"
+            className="group relative flex flex-col border-stone-200 bg-white transition-all duration-200 hover:border-blue-400 hover:shadow-md max-w-md rounded-2xl shadow-2xs"
           >
             <CardHeader className="pb-2">
               <div className="flex items-center justify-between mb-3">
-                <div className="inline-flex items-center justify-center size-11 rounded-xl bg-orange-50 border border-orange-200 text-orange-700 transition-colors group-hover:bg-orange-100/80">
+                <div className="inline-flex items-center justify-center size-11 rounded-xl bg-blue-50 border border-blue-200 text-blue-900 transition-colors group-hover:bg-blue-900 group-hover:text-white">
                   <Sparkles className="size-5" />
                 </div>
                 <span className="text-xs font-mono text-stone-700 font-bold tabular-nums select-none">
@@ -188,17 +188,17 @@ export default function Home() {
               <CardTitle className="text-base font-extrabold text-stone-950 tracking-tight">
                 Nos locaux
               </CardTitle>
-              <div className="h-0.5 w-8 rounded-full bg-orange-600 transition-all duration-300 group-hover:w-14 mt-1" />
+              <div className="h-0.5 w-8 rounded-full bg-amber-500 transition-all duration-300 group-hover:w-14 mt-1" />
             </CardHeader>
 
             <CardContent className="flex-1 pt-2">
               <ul className="flex flex-col gap-2.5">
                 <li className="flex items-start gap-2.5 text-sm text-stone-800">
-                  <Sparkles className="size-4 mt-0.5 shrink-0 text-orange-600" />
+                  <Sparkles className="size-4 mt-0.5 shrink-0 text-blue-900" />
                   <span className="leading-snug font-medium">Santhiaba, Ziguinchor</span>
                 </li>
                 <li className="flex items-start gap-2.5 text-sm text-stone-800">
-                  <Sparkles className="size-4 mt-0.5 shrink-0 text-orange-600" />
+                  <Sparkles className="size-4 mt-0.5 shrink-0 text-blue-900" />
                   <span className="leading-snug font-medium">Sénégal</span>
                 </li>
               </ul>
@@ -208,7 +208,7 @@ export default function Home() {
               <span className="text-xs font-semibold text-stone-700">
                 Ziguinchor, Sénégal
               </span>
-              <ArrowRight className="size-4 text-orange-700 transition-all duration-200 group-hover:translate-x-0.5" />
+              <ArrowRight className="size-4 text-blue-900 transition-all duration-200 group-hover:translate-x-0.5" />
             </CardFooter>
           </Card>
         </div>
