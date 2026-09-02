@@ -11,6 +11,17 @@ export type NavLink = {
 };
 
 /**
+ * Structure des réseaux sociaux.
+ */
+export type SocialLink = {
+    id: string;
+    name: string;
+    href: string;
+    icon: string;
+    description?: string;
+};
+
+/**
  * Structure des coordonnées de l'entreprise.
  */
 export type CompanyContact = {
@@ -25,3 +36,4 @@ export type CompanyContact = {
     /** Pays */
     country: string;
 };
+

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/shared/ContactForm";
-import { Sparkles } from "lucide-react";
+import { Sparkles, ExternalLink } from "lucide-react";
+import { SOCIAL_LINKS } from "@/data/navigation";
+import { SocialIcon } from "@/components/ui/SocialIcons";
+import { FadeIn } from "@/components/ui/animated";
 
 export const metadata: Metadata = {
     title: "Nous contacter | FANI IMPACT LAB - Ziguinchor & Sénégal",
@@ -73,10 +76,49 @@ export default function ContactPage() {
             </section>
 
             {/* ============================================================ */}
-            {/* FORMULAIRE                                                    */}
+            {/* FORMULAIRE ET RÉSEAUX SOCIAUX POPULAIRES                     */}
             {/* ============================================================ */}
-            <section className="relative z-20 -mt-10 pb-20 px-4 sm:px-6 md:px-12 flex justify-center">
+            <section className="relative z-20 -mt-10 pb-20 px-4 sm:px-6 md:px-12 flex flex-col items-center gap-12 max-w-5xl mx-auto">
                 <ContactForm />
+
+                {/* Bloc Réseaux Sociaux les plus utilisés */}
+                <FadeIn direction="up" className="w-full max-w-2xl">
+                    <div className="p-6 sm:p-8 rounded-2xl bg-white border border-stone-200 shadow-lg text-stone-900 flex flex-col gap-6">
+                        <div className="flex flex-col gap-1 text-center sm:text-left">
+                            <h3 className="text-xl font-extrabold text-[#061224] tracking-tight">
+                                Retrouvez-nous sur les réseaux sociaux
+                            </h3>
+                            <p className="text-sm text-stone-600 font-medium">
+                                Suivez nos actualités, échangez avec nos experts et rejoignez la communauté FANI IMPACT LAB sur nos canaux officiels.
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                            {SOCIAL_LINKS.map(({ id, name, href, icon, description }) => (
+                                <a
+                                    key={id}
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group flex items-start gap-3 p-3.5 rounded-xl bg-stone-50 border border-stone-200 hover:border-amber-500/50 hover:bg-blue-50/50 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-900"
+                                >
+                                    <div className="p-2.5 rounded-lg bg-[#061224] text-amber-400 shrink-0 group-hover:scale-105 transition-transform">
+                                        <SocialIcon name={icon} className="size-5" />
+                                    </div>
+                                    <div className="flex flex-col min-w-0">
+                                        <span className="text-sm font-bold text-[#061224] flex items-center gap-1">
+                                            {name}
+                                            <ExternalLink className="size-3 text-stone-400 group-hover:text-amber-600 transition-colors" />
+                                        </span>
+                                        <span className="text-xs text-stone-500 line-clamp-2 mt-0.5">
+                                            {description}
+                                        </span>
+                                    </div>
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                </FadeIn>
             </section>
         </main>
     );

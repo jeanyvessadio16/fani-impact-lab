@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     siteName: "FANI IMPACT LAB",
     images: [
       {
-        url: "/logo/FIL-LOGO.png",
+        url: "/logo/logo-fil.png",
         width: 1200,
         height: 630,
         alt: "Logo FANI IMPACT LAB - Conseil Stratégique & Innovation",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     title: "FANI IMPACT LAB | Conseil Stratégique & Innovation",
     description:
       "Cabinet de conseil stratégique spécialisé dans l'entrepreneuriat, l'innovation et le développement des écosystèmes au Sénégal et en Afrique.",
-    images: ["/logo/FIL-LOGO.png"],
+    images: ["/logo/logo-fil.png"],
   },
   robots: {
     index: true,
@@ -122,7 +122,16 @@ const jsonLd = {
     "name": "Fatoumata Niang",
     "jobTitle": "Fondatrice & Directrice Générale",
   },
+  "sameAs": [
+    "https://www.linkedin.com/company/fani-impact-lab",
+    "https://wa.me/221786032020",
+    "https://www.facebook.com/faniimpactlab",
+    "https://www.instagram.com/faniimpactlab",
+    "https://www.youtube.com/@faniimpactlab",
+    "https://www.tiktok.com/@faniimpactlab"
+  ],
 };
+
 
 export default function RootLayout({
   children,

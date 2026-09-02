@@ -10,7 +10,8 @@ import {
   ArrowUpRight,
   Sparkles,
 } from "lucide-react";
-import { NAV_LINKS, FOOTER_SERVICES_LINKS, COMPANY_CONTACT } from "@/data/navigation";
+import { NAV_LINKS, FOOTER_SERVICES_LINKS, COMPANY_CONTACT, SOCIAL_LINKS } from "@/data/navigation";
+import { SocialIcon } from "@/components/ui/SocialIcons";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -46,7 +47,28 @@ export default function Footer() {
               Transformer les idées en impact. Nous accompagnons entrepreneurs,
               institutions et organisations vers un avenir durable et innovant.
             </p>
+
+            {/* Réseaux Sociaux les plus utilisés */}
+            <div className="flex flex-col gap-2 mt-1">
+              <span className="text-xs font-semibold text-stone-400">Suivez-nous :</span>
+              <div className="flex items-center gap-2 flex-wrap">
+                {SOCIAL_LINKS.map(({ id, name, href, icon }) => (
+                  <a
+                    key={id}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={name}
+                    title={name}
+                    className="p-2 rounded-lg bg-blue-950/80 border border-blue-900/60 text-stone-300 hover:text-amber-400 hover:bg-blue-900/80 hover:border-amber-500/40 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+                  >
+                    <SocialIcon name={icon} className="size-4" />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
+
 
           {/* ── Column 2 : Navigation ── */}
           <div className="flex flex-col gap-4">
