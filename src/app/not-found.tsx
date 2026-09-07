@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, Sparkles, Home, Mail } from "lucide-react";
+import { ArrowLeft, Home, Mail } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,8 +22,7 @@ export default function NotFound() {
       {/* Contenu principal 404 */}
       <div className="relative z-10 w-full px-6 md:px-12 py-24 max-w-4xl mx-auto text-center flex flex-col items-center gap-7">
         {/* Badge 404 */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-900/60 border border-blue-700/60 backdrop-blur-md text-amber-300 text-xs sm:text-sm font-bold tracking-wide">
-          <Sparkles className="size-4 text-amber-400 animate-pulse" />
+        <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-900/60 border border-blue-700/60 backdrop-blur-md text-amber-300 text-xs sm:text-sm font-bold tracking-wide">
           <span>Erreur 404</span>
         </div>
 

@@ -31,10 +31,6 @@ export default function HeaderNavbar() {
         return () => window.removeEventListener("keydown", handleKeyDown);
     }, [isMenuOpen]);
 
-    if (pathname === "/contact") {
-        return null;
-    }
-
     return (
         <>
             <header
@@ -49,7 +45,7 @@ export default function HeaderNavbar() {
                         href="/"
                         className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 rounded-lg"
                     >
-                        <div className="relative overflow-hidden rounded-lg p-1 border group-hover:border-blue-400 transition-colors">
+                        <div className="relative overflow-hidden rounded-lg p-1 border border-stone-200 group-hover:border-blue-400 transition-colors">
                             <Image
                                 src="/logo/logo-fil.png"
                                 alt="Logo FANI IMPACT LAB"
@@ -62,16 +58,16 @@ export default function HeaderNavbar() {
                     </Link>
 
                     {/* Navigation Desktop */}
-                    <nav className="hidden md:flex items-center gap-1 bg-white/95 p-1.5 rounded-full border border-stone-200/80" aria-label="Navigation principale">
+                    <nav className="hidden lg:flex items-center gap-1 bg-white/95 p-1.5 rounded-full border border-stone-200/80" aria-label="Navigation principale">
                         {NAV_LINKS.map((link) => {
-                            const isActive = pathname === link.href;
+                            const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
                             return (
                                 <Link
                                     key={link.id}
                                     href={link.href}
                                     aria-current={isActive ? "page" : undefined}
-                                    className={`px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 ${isActive
-                                        ? "bg-blue-950 text-white shadow-xs border border-blue-900"
+                                    className={`px-3.5 py-1.5 text-xs xl:text-sm font-semibold rounded-full transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 ${isActive
+                                        ? "bg-[#061224] text-white shadow-xs border border-blue-900"
                                         : "text-stone-700 hover:text-blue-900 hover:bg-stone-100/80"
                                         }`}
                                 >
@@ -82,7 +78,7 @@ export default function HeaderNavbar() {
                     </nav>
 
                     {/* Mobile Toggle */}
-                    <div className="md:hidden flex items-center">
+                    <div className="lg:hidden flex items-center">
                         <button
                             type="button"
                             className="p-2.5 text-stone-700 hover:text-blue-900 hover:bg-stone-100 rounded-xl transition-colors cursor-pointer min-h-[44px] min-w-[44px] flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-800"
@@ -99,7 +95,7 @@ export default function HeaderNavbar() {
 
             {/* Menu Mobile - Overlay & Drawer */}
             {isMenuOpen && (
-                <div className="fixed inset-0 z-50 md:hidden flex justify-end bg-stone-950/50 backdrop-blur-xs animate-in fade-in duration-200">
+                <div className="fixed inset-0 z-50 lg:hidden flex justify-end bg-stone-950/50 backdrop-blur-xs animate-in fade-in duration-200">
                     <div
                         className="absolute inset-0"
                         onClick={() => setIsMenuOpen(false)}
@@ -134,7 +130,7 @@ export default function HeaderNavbar() {
                         <nav className="my-8 flex-1" aria-label="Navigation mobile">
                             <ul className="flex flex-col gap-2">
                                 {NAV_LINKS.map((link) => {
-                                    const isActive = pathname === link.href;
+                                    const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
                                     return (
                                         <li key={link.id}>
                                             <Link
@@ -142,7 +138,7 @@ export default function HeaderNavbar() {
                                                 onClick={() => setIsMenuOpen(false)}
                                                 aria-current={isActive ? "page" : undefined}
                                                 className={`block px-4 py-3 text-base font-semibold rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 ${isActive
-                                                    ? "bg-blue-900 text-white border border-blue-900"
+                                                    ? "bg-[#061224] text-white border border-blue-900"
                                                     : "text-stone-800 hover:text-blue-900 hover:bg-blue-50/70"
                                                     }`}
                                             >
@@ -159,3 +155,4 @@ export default function HeaderNavbar() {
         </>
     );
 }
+

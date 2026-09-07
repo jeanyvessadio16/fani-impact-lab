@@ -2,24 +2,18 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import {
   MapPin,
   Mail,
   Phone,
   ArrowUpRight,
-  Sparkles,
+  MessageSquare,
 } from "lucide-react";
-import { NAV_LINKS, FOOTER_SERVICES_LINKS, COMPANY_CONTACT, SOCIAL_LINKS } from "@/data/navigation";
+import { NAV_LINKS, FOOTER_SERVICES_LINKS, FOOTER_LEGAL_LINKS, COMPANY_CONTACT, SOCIAL_LINKS } from "@/data/navigation";
 import { SocialIcon } from "@/components/ui/SocialIcons";
 
 export default function Footer() {
-  const pathname = usePathname();
   const year = new Date().getFullYear();
-
-  if (pathname === "/contact") {
-    return null;
-  }
 
   return (
     <footer className="relative bg-[#061224] text-stone-200 border-t border-blue-950">
@@ -29,7 +23,6 @@ export default function Footer() {
 
           {/* ── Column 1 : Brand ── */}
           <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-1">
-            {/* Logo + nom */}
             <Link href="/" className="flex items-center gap-3 group w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg">
               <div className="relative overflow-hidden rounded-lg p-1 bg-white border border-blue-900 group-hover:border-amber-500/60 transition-colors">
                 <Image
@@ -42,15 +35,12 @@ export default function Footer() {
               </div>
             </Link>
 
-            {/* Tagline */}
             <p className="text-sm leading-relaxed text-stone-300 max-w-xs">
-              Transformer les idées en impact. Nous accompagnons entrepreneurs,
-              institutions et organisations vers un avenir durable et innovant.
+              Transformer les idées en impact. Nous accompagnons les entrepreneurs, institutions et acteurs des écosystèmes vers un avenir durable et innovant.
             </p>
 
-            {/* Réseaux Sociaux les plus utilisés */}
             <div className="flex flex-col gap-2 mt-1">
-              <span className="text-xs font-semibold text-stone-400">Suivez-nous :</span>
+              <span className="text-xs font-semibold text-stone-400">Rejoignez notre réseau :</span>
               <div className="flex items-center gap-2 flex-wrap">
                 {SOCIAL_LINKS.map(({ id, name, href, icon }) => (
                   <a
@@ -68,7 +58,6 @@ export default function Footer() {
               </div>
             </div>
           </div>
-
 
           {/* ── Column 2 : Navigation ── */}
           <div className="flex flex-col gap-4">
@@ -91,11 +80,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* ── Column 3 : Services ── */}
+          {/* ── Column 3 : Nos Pôles d'Expertise ── */}
           <div className="flex flex-col gap-4">
             <h3 className="text-xs font-bold tracking-widest uppercase text-stone-300 flex items-center gap-2">
               <span className="inline-block w-4 h-px bg-amber-500 rounded-full" />
-              Nos services
+              Nos Pôles
             </h3>
             <ul className="flex flex-col gap-2.5">
               {FOOTER_SERVICES_LINKS.map(({ id, label, href }) => (
@@ -112,11 +101,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* ── Column 4 : Contact ── */}
+          {/* ── Column 4 : Ancrage & Contact ── */}
           <div className="flex flex-col gap-4">
             <h3 className="text-xs font-bold tracking-widest uppercase text-stone-300 flex items-center gap-2">
               <span className="inline-block w-4 h-px bg-amber-500 rounded-full" />
-              Contact
+              Contact & Ancrage
             </h3>
             <ul className="flex flex-col gap-3.5">
               <li>
@@ -145,7 +134,7 @@ export default function Footer() {
                 <div className="mt-0.5 inline-flex items-center justify-center size-7 rounded-lg bg-blue-900/50 border border-blue-700/40 text-amber-400 shrink-0">
                   <MapPin className="size-3.5" />
                 </div>
-                <span>{COMPANY_CONTACT.address}</span>
+                <span>Santhiaba, Ziguinchor — Casamance, Sénégal</span>
               </li>
             </ul>
           </div>
@@ -155,12 +144,12 @@ export default function Footer() {
         <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-[#0B1E3D] border border-blue-900 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
           <div className="flex items-start gap-3">
             <div className="mt-0.5 inline-flex items-center justify-center size-9 rounded-xl bg-amber-500/20 border border-amber-400/30 text-amber-400 shrink-0">
-              <Sparkles className="size-4" />
+              <MessageSquare className="size-4" />
             </div>
             <div>
-              <p className="text-sm font-bold text-white">Démarrons ensemble</p>
+              <p className="text-sm font-bold text-white">Parlez-nous de votre projet</p>
               <p className="text-xs text-stone-300 mt-0.5">
-                Transformez votre vision en impact réel avec nos équipes.
+                Transformez vos idées en impact concret avec FANI IMPACT LAB.
               </p>
             </div>
           </div>
@@ -168,26 +157,29 @@ export default function Footer() {
             href="/contact"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold shadow-xs transition-all hover:scale-[1.02] active:scale-[0.98] shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
           >
-            Nous contacter
+            Prendre contact
             <ArrowUpRight className="size-4" />
           </Link>
         </div>
 
         {/* ── Bottom bar ── */}
         <div className="mt-10 pt-6 border-t border-blue-950 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-400">
-          <p>© {year} FANI IMPACT LAB. Tous droits réservés.</p>
+          <p>© {year} FANI IMPACT LAB (FIL). Tous droits réservés. Ziguinchor, Sénégal.</p>
           <div className="flex items-center gap-4">
-            <Link href="/politique-de-confidentialite" className="hover:text-stone-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 rounded">
-              Confidentialité
-            </Link>
-            <span className="w-px h-3 bg-blue-950" />
-            <Link href="/mentions-legales" className="hover:text-stone-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 rounded">
-              Mentions légales
-            </Link>
+            {FOOTER_LEGAL_LINKS.map((legalLink) => (
+              <Link
+                key={legalLink.id}
+                href={legalLink.href}
+                className="hover:text-stone-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 rounded"
+              >
+                {legalLink.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
     </footer>
   );
 }
+
 

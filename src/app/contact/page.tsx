@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/shared/ContactForm";
-import { Sparkles, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { SOCIAL_LINKS } from "@/data/navigation";
 import { SocialIcon } from "@/components/ui/SocialIcons";
 import { FadeIn } from "@/components/ui/animated";
@@ -61,7 +61,6 @@ export default function ContactPage() {
 
                 <div className="relative z-10 w-full px-6 md:px-12 pt-32 pb-16 md:pt-40 md:pb-20 max-w-4xl mx-auto text-center flex flex-col items-center gap-4">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-900/60 border border-blue-700/60 backdrop-blur-md text-amber-300 text-xs sm:text-sm font-bold tracking-wide">
-                        <Sparkles className="size-4 text-amber-400 animate-pulse" />
                         <span>Prendre contact</span>
                     </div>
 

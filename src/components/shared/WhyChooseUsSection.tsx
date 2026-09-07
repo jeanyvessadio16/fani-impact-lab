@@ -1,5 +1,4 @@
 import React from "react";
-import { Sparkles, CheckCircle2, Check } from "lucide-react";
 import { WHY_CHOOSE_US, type WhyChooseUsData } from "@/data/about";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/animated";
 
@@ -14,14 +13,13 @@ export default function WhyChooseUsSection({
 }: WhyChooseUsSectionProps) {
   return (
     <section
-      id="pourquoi-nous-choisir"
-      className={`relative py-16 sm:py-20 bg-stone-50/80 border-b border-stone-200 overflow-hidden ${className}`}
+      id="pourquoi-fil"
+      className={`relative py-20 bg-stone-50/80 border-b border-stone-200 overflow-hidden ${className}`}
     >
-      <div className="relative z-10 w-full px-6 md:px-12 max-w-7xl mx-auto flex flex-col gap-10">
+      <div className="relative z-10 w-full px-6 md:px-12 max-w-7xl mx-auto flex flex-col gap-12">
         {/* En-tête de section */}
         <FadeIn direction="up" className="flex flex-col gap-3.5 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold tracking-widest uppercase w-fit">
-            <Sparkles className="size-3.5 text-amber-600" />
+          <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold tracking-widest uppercase w-fit">
             <span>{data.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-stone-950 leading-tight">
@@ -35,32 +33,33 @@ export default function WhyChooseUsSection({
           </p>
         </FadeIn>
 
-        {/* Grille compacte des items de la liste validée */}
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-          {data.items.map((item) => (
-            <StaggerItem key={item.id}>
-              <div className="group flex items-center justify-between p-5 rounded-2xl border border-stone-200 bg-white shadow-2xs transition-all duration-200 hover:border-emerald-500 hover:shadow-sm hover:-translate-y-0.5">
-                {/* Gauche: Icône coche + Titre */}
-                <div className="flex items-center gap-3.5">
-                  <div className="inline-flex items-center justify-center size-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 transition-colors group-hover:bg-emerald-100 shrink-0">
-                    <CheckCircle2 className="size-5 text-emerald-700" />
+        {/* Grille des 4 piliers différenciateurs */}
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {data.items.map((item) => {
+            const Icon = item.icon;
+            return (
+              <StaggerItem key={item.id}>
+                <div className="group flex flex-col p-6 rounded-2xl border border-stone-200 bg-white shadow-2xs transition-all duration-200 hover:border-blue-400 hover:shadow-md hover:-translate-y-1 h-full">
+                  <div className="inline-flex items-center justify-center size-12 rounded-xl bg-blue-50 border border-blue-200 text-blue-900 mb-4 transition-colors group-hover:bg-blue-900 group-hover:text-white shrink-0">
+                    <Icon className="size-6" />
                   </div>
-                  <span className="text-base font-extrabold text-stone-950 tracking-tight group-hover:text-emerald-800 transition-colors">
-                    {item.title}
-                  </span>
-                </div>
 
-                {/* Droite: Tag de validation */}
-                <div className="hidden xs:inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-[11px] font-bold">
-                  <Check className="size-3 stroke-[3]" />
-                  <span>Validé</span>
+                  <h3 className="text-lg font-extrabold text-stone-950 tracking-tight leading-snug mb-2">
+                    {item.title}
+                  </h3>
+                  <div className="h-0.5 w-8 rounded-full bg-amber-500 transition-all duration-300 group-hover:w-14 mb-3" />
+
+                  <p className="text-sm text-stone-700 leading-relaxed font-normal flex-1">
+                    {item.description}
+                  </p>
                 </div>
-              </div>
-            </StaggerItem>
-          ))}
+              </StaggerItem>
+            );
+          })}
         </StaggerContainer>
       </div>
     </section>
   );
 }
+
 

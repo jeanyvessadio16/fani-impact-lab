@@ -15,26 +15,20 @@ export type WhatWeDoItem = {
 };
 
 /**
- * Représente une catégorie de client ou partenaire.
+ * Représente une catégorie de client ou partenaire ("Pour qui ?").
  */
 export type ClientItem = {
     /** Identifiant unique */
     id: number;
-    /** Nom de la catégorie (ex: Startups, PME, ONG) */
+    /** Nom de la catégorie */
     name: string;
+    /** Description ou précision sur la proposition de valeur */
+    description?: string;
     /** Icône Lucide représentative */
     icon: LucideIcon;
 };
 
-/**
- * Représente une statistique clé de l'organisation.
- */
-export type StatItem = {
-    /** Valeur affichée (ex: "2020", "50+") */
-    value: string;
-    /** Libellé de la statistique */
-    label: string;
-};
+export type TargetAudienceItem = ClientItem;
 
 /**
  * Représente un pilier d'action stratégique.
@@ -114,8 +108,10 @@ export type FounderInfo = {
     image: string;
     /** Paragraphes de biographie */
     bio: string[];
-    /** Liste des compétences clés et réalisations */
+    /** Liste des compétences clés et expertises */
     skills: string[];
+    /** URL LinkedIn de la fondatrice */
+    linkedinUrl?: string;
 };
 
 /**
@@ -124,12 +120,12 @@ export type FounderInfo = {
 export type WhyChooseUsItem = {
     /** Identifiant unique */
     id: number;
-    /** Titre de la raison / réalisation */
+    /** Titre de la raison / pilier */
     title: string;
-    /** Explication synthétique optionnelle */
-    description?: string;
-    /** Icône Lucide représentative optionnelle */
-    icon?: LucideIcon;
+    /** Description détaillée */
+    description: string;
+    /** Icône Lucide représentative */
+    icon: LucideIcon;
 };
 
 /**
@@ -147,5 +143,6 @@ export type WhyChooseUsData = {
     /** Liste des avantages/raisons */
     items: WhyChooseUsItem[];
 };
+
 
 

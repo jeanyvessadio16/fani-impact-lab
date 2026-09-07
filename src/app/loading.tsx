@@ -1,4 +1,4 @@
-import { Loader2, Sparkles } from "lucide-react";
+import { Loader2 } from "lucide-react";
 
 export default function Loading() {
   return (
@@ -6,8 +6,7 @@ export default function Loading() {
       {/* Conteneur d'animation principal */}
       <div className="relative flex flex-col items-center gap-6 max-w-md mx-auto">
         {/* Badge Pilule avec pulsation */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-950 text-xs sm:text-sm font-bold tracking-wide animate-pulse">
-          <Sparkles className="size-4 text-amber-600" />
+        <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-950 text-xs sm:text-sm font-bold tracking-wide animate-pulse">
           <span>Chargement en cours...</span>
         </div>
 

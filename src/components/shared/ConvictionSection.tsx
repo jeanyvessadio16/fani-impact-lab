@@ -1,4 +1,4 @@
-import { Sparkles, Quote, Target } from "lucide-react";
+import { Quote, Target } from "lucide-react";
 import { OUR_CONVICTION, type ConvictionData } from "@/data/about";
 import { FadeIn, ScaleIn, StaggerContainer, StaggerItem } from "@/components/ui/animated";
 
@@ -19,8 +19,7 @@ export default function ConvictionSection({
       <div className="relative z-10 w-full px-6 md:px-12 max-w-7xl mx-auto flex flex-col gap-12">
         {/* En-tête de la section */}
         <FadeIn direction="up" className="flex flex-col gap-4 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold tracking-widest uppercase w-fit">
-            <Sparkles className="size-3.5 text-amber-600" />
+          <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold tracking-widest uppercase w-fit">
             <span>{data.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-stone-950 leading-tight">

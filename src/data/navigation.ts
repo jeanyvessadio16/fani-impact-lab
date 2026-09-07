@@ -4,16 +4,21 @@ export type { NavLink, CompanyContact, SocialLink };
 
 export const NAV_LINKS: NavLink[] = [
     { id: 1, label: "Accueil", href: "/" },
-    { id: 2, label: "Nos offres", href: "/#services" },
-    { id: 3, label: "À propos", href: "/a-propos" },
-    { id: 4, label: "Nous contacter", href: "/contact" },
+    { id: 2, label: "À propos", href: "/a-propos" },
+    { id: 3, label: "Nos expertises", href: "/nos-expertises" },
+    { id: 4, label: "Contact", href: "/contact" },
 ];
 
 export const FOOTER_SERVICES_LINKS: NavLink[] = [
-    { id: 1, label: "Advisory", href: "/#services" },
-    { id: 2, label: "Écosystèmes", href: "/#services" },
-    { id: 3, label: "Academy", href: "/#services" },
-    { id: 4, label: "Research", href: "/#services" },
+    { id: 1, label: "Advisory", href: "/nos-expertises#advisory" },
+    { id: 2, label: "Écosystèmes", href: "/nos-expertises#ecosystemes" },
+    { id: 3, label: "Academy", href: "/nos-expertises#academy" },
+    { id: 4, label: "Research", href: "/nos-expertises#research" },
+];
+
+export const FOOTER_LEGAL_LINKS: NavLink[] = [
+    { id: 1, label: "Mentions légales", href: "/mentions-legales" },
+    { id: 2, label: "Politique de confidentialité", href: "/politique-de-confidentialite" },
 ];
 
 export const COMPANY_CONTACT: CompanyContact = {
@@ -68,4 +73,5 @@ export const SOCIAL_LINKS: SocialLink[] = [
         description: "Regardez nos vidéos courtes d'impact sur TikTok",
     },
 ];
+
 

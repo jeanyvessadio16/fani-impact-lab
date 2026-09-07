@@ -1,16 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Sparkles, ArrowRight, Quote } from "lucide-react";
-import { WHAT_WE_DO, CLIENTS, FOUNDER_INFO } from "@/data/about";
+import { ArrowRight } from "lucide-react";
 import ConvictionSection from "@/components/shared/ConvictionSection";
 import MethodSection from "@/components/shared/MethodSection";
-import { FadeIn, ScaleIn, StaggerContainer, StaggerItem } from "@/components/ui/animated";
+import FounderSection from "@/components/shared/FounderSection";
+import TargetAudienceSection from "@/components/shared/TargetAudienceSection";
+import { FadeIn } from "@/components/ui/animated";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "À propos | Vision, Méthode Le FIL & Fondatrice Fatoumata Niang",
+  title: "À propos | Vision, Agilité & Fondatrice Fatoumata Niang",
   description:
-    "Découvrez l'histoire, la vision, la méthode 'Le FIL' et la fondatrice de FANI IMPACT LAB, Fatoumata Niang. Un cabinet dédié à l'entrepreneuriat et au développement des écosystèmes en Afrique.",
+    "Découvrez l'histoire, la vision, la méthode 'Le FIL' et la fondatrice de FANI IMPACT LAB, Fatoumata Niang. Un cabinet dédié à l'entrepreneuriat et au développement des écosystèmes au Sénégal et en Afrique.",
   keywords: [
     "À propos FANI IMPACT LAB",
     "Fatoumata Niang fondatrice",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     title: "À propos de FANI IMPACT LAB | Vision & Fondatrice Fatoumata Niang",
     description:
       "Cabinet de conseil stratégique engagé dans le développement des écosystèmes et l'accompagnement d'impact au Sénégal et en Afrique.",
-    url: "https://fanimpactlab.com/a-propos",
+    url: "https://fanimpactlab.vercel.app/a-propos",
     images: [
       {
         url: "/images/fondatrice.jpeg",
@@ -47,331 +48,71 @@ export const metadata: Metadata = {
   },
 };
 
-/* ------------------------------------------------------------------ */
-/*  PAGE                                                              */
-/* ------------------------------------------------------------------ */
-
 export default function APropos() {
     return (
         <main className="relative flex-1 bg-white">
-            {/* ============================================================ */}
-            {/* HERO SECTION                                                  */}
-            {/* ============================================================ */}
-            <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-[#061224] text-white border-b border-blue-950">
-                {/* Arrière-plan avec Image claire et bien visible en position fixe (effet parallaxe) */}
+            {/* HERO SECTION */}
+            <section className="relative min-h-[60vh] flex flex-col justify-center items-center overflow-hidden bg-[#061224] text-white border-b border-blue-950">
                 <div
-                    className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-50"
+                    className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-40"
                     style={{ backgroundImage: "url('/images/about-hero.png')" }}
                 />
+                <div className="absolute inset-0 z-0 bg-[#061224]/85" />
 
-                {/* Masque de lisibilité sombre uni aux reflets bleu marine */}
-                <div className="absolute inset-0 z-0 bg-[#071326]/85" />
-
-                {/* Content */}
-                <div className="relative z-10 w-full min-h-screen px-6 md:px-12 flex flex-col justify-center items-center gap-5 text-center">
-                    {/* Badge */}
+                <div className="relative z-10 w-full px-6 md:px-12 pt-32 pb-20 max-w-4xl mx-auto flex flex-col justify-center items-center gap-5 text-center">
                     <FadeIn direction="down" delay={0.1}>
-                        <div className="inline-flex items-center gap-2 px-4 py-2 mt-16 rounded-full bg-blue-900/60 border border-blue-700/60 backdrop-blur-md text-amber-300 text-xs sm:text-sm font-bold tracking-wide w-fit">
-                            <Sparkles className="size-4 text-amber-400 animate-pulse" />
+                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-900/60 border border-blue-700/60 backdrop-blur-md text-amber-300 text-xs sm:text-sm font-bold tracking-wide">
                             <span>Qui sommes-nous ?</span>
                         </div>
                     </FadeIn>
 
-                    {/* Heading */}
                     <FadeIn direction="up" delay={0.2}>
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] max-w-3xl">
-                            Un cabinet{" "}
-                            <span className="text-amber-400">
-                                de conseil
-                            </span>{" "}
-                            au service de l&apos;Afrique
+                            Un cabinet de <span className="text-amber-400">conseil stratégique</span> au service de l'Afrique
                         </h1>
                     </FadeIn>
 
-                    {/* Description */}
                     <FadeIn direction="up" delay={0.3}>
                         <p className="text-lg sm:text-xl text-stone-200 font-medium leading-relaxed max-w-2xl">
-                            FANI IMPACT LAB est un cabinet de conseil stratégique spécialisé dans l'entrepreneuriat, l'innovation et le développement des écosystèmes.
+                            FANI IMPACT LAB est une structure nouvelle portée par une ambition claire : structurer les écosystèmes et accompagner la transformation des organisations en Afrique avec rigueur et proximité.
                         </p>
-                    </FadeIn>
-
-                    {/* CTA */}
-                    <FadeIn direction="up" delay={0.4}>
-                        <div className="flex flex-wrap items-center gap-4 pt-2 justify-center">
-                            <Link
-                                href="#conviction"
-                                className="inline-flex items-center gap-2.5 h-12 px-7 text-sm font-semibold bg-[#0B1E3D] hover:bg-[#122B52] text-white border border-blue-700/60 rounded-xl shadow-md transition-all hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950"
-                            >
-                                Notre vision
-                                <ArrowRight className="size-4 text-amber-400" />
-                            </Link>
-                            <Link
-                                href="#fondatrice"
-                                className="inline-flex items-center gap-2 h-12 px-6 text-sm font-semibold border border-white/30 bg-white/10 hover:bg-white/20 text-white rounded-xl backdrop-blur-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950"
-                            >
-                                La fondatrice
-                            </Link>
-                        </div>
                     </FadeIn>
                 </div>
             </section>
 
-            {/* ============================================================ */}
-            {/* NOTRE CONVICTION & VISION                                    */}
-            {/* ============================================================ */}
+            {/* NOTRE CONVICTION & VISION */}
             <ConvictionSection />
 
-            {/* ============================================================ */}
-            {/* NOTRE MÉTHODE (LE FIL)                                       */}
-            {/* ============================================================ */}
+            {/* NOTRE MÉTHODE (LE FIL) */}
             <MethodSection />
 
-            {/* ============================================================ */}
-            {/* CE QUE NOUS FAISONS                                           */}
-            {/* ============================================================ */}
-            <section
-                id="ce-que-nous-faisons"
-                className="relative py-24 bg-stone-50/70 border-b border-stone-200 overflow-hidden"
-            >
-                <div className="relative z-10 w-full px-6 md:px-12 max-w-7xl mx-auto">
-                    {/* Header */}
-                    <FadeIn direction="up" className="mb-16 flex flex-col gap-4 max-w-2xl">
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold tracking-widest uppercase w-fit">
-                            <Sparkles className="size-3.5 text-amber-600" />
-                            <span>Nos domaines d&apos;intervention</span>
-                        </div>
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-stone-950 leading-tight">
-                            Ce que nous{" "}
-                            <span className="text-blue-900">
-                                faisons
-                            </span>
-                        </h2>
-                        <p className="text-base sm:text-lg text-stone-800 font-medium leading-relaxed">
-                            Nous accompagnons entrepreneurs, institutions, entreprises, ONG et partenaires techniques dans la conception de solution à fort impact.
-                        </p>
-                    </FadeIn>
+            {/* POUR QUOI ET POUR QUI ? */}
+            <TargetAudienceSection />
 
-                    {/* Grid */}
-                    <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                        {WHAT_WE_DO.map((item) => {
-                            const Icon = item.icon;
-                            return (
-                                <StaggerItem key={item.id}>
-                                    <div className="group relative flex flex-col gap-4 p-6 rounded-2xl border border-stone-200 bg-white shadow-xs transition-all duration-200 hover:border-blue-400 hover:shadow-md hover:-translate-y-1 h-full">
-                                        {/* Icon + numéro */}
-                                        <div className="flex items-center justify-between">
-                                            <div className="inline-flex items-center justify-center size-12 rounded-xl bg-blue-50 border border-blue-200 text-blue-900 transition-colors group-hover:bg-blue-900 group-hover:text-white shrink-0">
-                                                <Icon className="size-6" />
-                                            </div>
-                                            <span className="text-xs font-mono text-stone-700 font-bold tabular-nums select-none">
-                                                0{item.id}
-                                            </span>
-                                        </div>
+            {/* FONDATRICE DE FIL */}
+            <FounderSection />
 
-                                        {/* Titre & description */}
-                                        <div className="flex flex-col gap-2">
-                                            <h3 className="text-lg font-extrabold text-stone-950 tracking-tight leading-snug">
-                                                {item.title}
-                                            </h3>
-                                            <div className="h-0.5 w-8 rounded-full bg-amber-500 transition-all duration-300 group-hover:w-14" />
-                                            <p className="text-sm text-stone-800 leading-relaxed mt-1 font-normal">
-                                                {item.description}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </StaggerItem>
-                            );
-                        })}
-                    </StaggerContainer>
-                </div>
-            </section>
-
-            {/* ============================================================ */}
-            {/* NOS CLIENTS                                                   */}
-            {/* ============================================================ */}
-            <section
-                id="clients"
-                className="relative py-24 overflow-hidden bg-white border-b border-stone-200"
-            >
-                <div className="relative z-10 w-full px-6 md:px-12 max-w-7xl mx-auto flex flex-col gap-12">
-                    {/* Top – Header & Description */}
-                    <FadeIn direction="up" className="flex flex-col gap-4 max-w-3xl">
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold tracking-widest uppercase w-fit">
-                            <Sparkles className="size-3.5 text-amber-600" />
-                            <span>Ceux qui nous font confiance</span>
-                        </div>
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-stone-950 leading-tight">
-                            Nos{" "}
-                            <span className="text-blue-900">
-                                clients
-                            </span>
-                        </h2>
-                        <p className="text-base sm:text-lg text-stone-800 font-medium leading-relaxed">
-                            Nous intervenons auprès d&apos;une grande diversité d&apos;acteurs,
-                            réunis par une même ambition : créer un impact durable et
-                            mesurable sur leurs territoires et leurs secteurs.
-                        </p>
-                    </FadeIn>
-
-                    {/* Bottom – Client cards grid */}
-                    <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {CLIENTS.map((client) => {
-                            const Icon = client.icon;
-                            return (
-                                <StaggerItem key={client.id}>
-                                    <div className="group flex items-center justify-between px-5 py-4 rounded-2xl border border-stone-200 bg-white shadow-2xs transition-all duration-200 hover:border-blue-400 hover:shadow-xs hover:-translate-y-0.5">
-                                        <div className="flex items-center gap-3.5">
-                                            <div className="inline-flex items-center justify-center size-9 rounded-xl bg-blue-50 border border-blue-200 text-blue-900 transition-colors group-hover:bg-blue-900 group-hover:text-white shrink-0">
-                                                <Icon className="size-4.5" />
-                                            </div>
-                                            <span className="text-sm font-bold text-stone-900 group-hover:text-blue-900 transition-colors">
-                                                {client.name}
-                                            </span>
-                                        </div>
-                                        <div className="h-2 w-2 rounded-full bg-amber-500 group-hover:bg-amber-600 transition-colors" />
-                                    </div>
-                                </StaggerItem>
-                            );
-                        })}
-                    </StaggerContainer>
-
-                    {/* Quote block */}
-                    <FadeIn direction="up" delay={0.2}>
-                        <div className="mt-4 p-8 rounded-2xl bg-blue-50/70 border-l-4 border-blue-900 shadow-2xs flex flex-col sm:flex-row gap-5 items-start">
-                            <Quote className="size-8 text-blue-900 shrink-0 mt-1" />
-                            <blockquote className="text-base sm:text-lg text-stone-900 italic leading-relaxed font-medium">
-                                Les plus grands défis de l'Afrique ne seront pas résolus par une seule organisation, <span className="text-blue-950 font-extrabold not-italic">mais seront résolus par des écosystèmes</span>.
-                            </blockquote>
-                        </div>
-                    </FadeIn>
-                </div>
-            </section>
-
-            {/* ============================================================ */}
-            {/* FONDATRICE DE FIL                                             */}
-            {/* ============================================================ */}
-            <section
-                id="fondatrice"
-                className="relative py-24 bg-stone-50/70 border-b border-stone-200 overflow-hidden"
-            >
-                <div className="relative z-10 w-full px-6 md:px-12 max-w-7xl mx-auto">
-                    {/* Header */}
-                    <FadeIn direction="up" className="mb-16 flex flex-col gap-4 max-w-xl">
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold tracking-widest uppercase w-fit">
-                            <Sparkles className="size-3.5 text-amber-600" />
-                            <span>La personne derrière FIL</span>
-                        </div>
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-stone-950 leading-tight">
-                            La{" "}
-                            <span className="text-blue-900">
-                                fondatrice
-                            </span>
-                        </h2>
-                    </FadeIn>
-
-                    {/* Profile card */}
-                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-start">
-                        {/* Photo */}
-                        <ScaleIn delay={0.1} className="lg:col-span-2">
-                            <div className="relative group max-w-sm mx-auto lg:mx-0">
-                                <div className="relative overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-md aspect-[4/5]">
-                                    <Image
-                                        src={FOUNDER_INFO.image}
-                                        alt={`Fondatrice de FANI IMPACT LAB - ${FOUNDER_INFO.name}`}
-                                        fill
-                                        className="object-cover object-top transition-transform duration-500 group-hover:scale-103"
-                                        sizes="(max-width: 1024px) 80vw, 40vw"
-                                        priority
-                                    />
-                                </div>
-
-                                {/* Name badge overlaid at bottom */}
-                                <div className="absolute bottom-4 left-4 right-4">
-                                    <div className="px-4 py-2.5 rounded-xl bg-white/95 backdrop-blur-md border border-stone-200 shadow-sm">
-                                        <p className="text-sm font-extrabold text-stone-950">
-                                            {FOUNDER_INFO.name}
-                                        </p>
-                                        <p className="text-xs text-blue-900 font-bold mt-0.5">
-                                            {FOUNDER_INFO.role}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </ScaleIn>
-
-                        {/* Bio */}
-                        <FadeIn direction="left" delay={0.2} className="lg:col-span-3 flex flex-col gap-6 lg:pt-2">
-                            <div className="flex flex-col gap-2">
-                                <h3 className="text-2xl sm:text-3xl font-extrabold text-stone-950 tracking-tight">
-                                    {FOUNDER_INFO.name}
-                                </h3>
-                                <p className="text-blue-900 font-bold text-sm tracking-wide">
-                                    {FOUNDER_INFO.title}
-                                </p>
-                                <div className="h-0.5 w-12 rounded-full bg-amber-500 mt-1" />
-                            </div>
-
-                            <div className="flex flex-col gap-4 text-stone-800 text-base leading-relaxed font-normal">
-                                {FOUNDER_INFO.bio.map((paragraph, index) => (
-                                    <p key={index}>{paragraph}</p>
-                                ))}
-                            </div>
-
-                            {/* Tags */}
-                            <div className="flex flex-wrap gap-2 mt-2">
-                                {FOUNDER_INFO.skills.map((tag) => (
-                                    <span
-                                        key={tag}
-                                        className="px-3.5 py-1 text-xs font-bold rounded-full bg-blue-50 border border-blue-200 text-blue-950"
-                                    >
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
-
-                            {/* CTA */}
-                            <div className="flex flex-wrap gap-4 mt-4 pt-6 border-t border-stone-200">
-                                <Link
-                                    href="/contact"
-                                    className="inline-flex items-center gap-2.5 h-12 px-7 text-sm font-semibold bg-[#0B1E3D] hover:bg-[#122B52] text-white rounded-xl shadow-xs transition-all hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-                                >
-                                    Nous contacter
-                                    <ArrowRight className="size-4 text-amber-400" />
-                                </Link>
-                            </div>
-                        </FadeIn>
-                    </div>
-                </div>
-            </section>
-
-            {/* ============================================================ */}
-            {/* CTA FINAL                                                     */}
-            {/* ============================================================ */}
-            <section className="relative py-20 bg-white overflow-hidden">
+            {/* CTA FINAL */}
+            <section className="relative py-20 bg-[#061224] text-white overflow-hidden">
                 <FadeIn direction="up" className="relative z-10 w-full px-6 md:px-12 max-w-4xl mx-auto text-center flex flex-col items-center gap-7">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold tracking-wide">
-                        <Sparkles className="size-3.5 text-amber-600 animate-pulse" />
-                        <span>Démarrons ensemble</span>
+                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-900/60 border border-blue-700/60 text-amber-300 text-xs font-bold tracking-wide">
+                        <span>Rejoignez l'Aventure</span>
                     </div>
 
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-stone-950 leading-tight max-w-2xl">
-                        Prêt à transformer votre{" "}
-                        <span className="text-blue-900">
-                            vision en impact ?
-                        </span>
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight max-w-2xl">
+                        Construisons ensemble vos projets à <span className="text-amber-400">fort impact</span>
                     </h2>
 
-                    <p className="text-base sm:text-lg text-stone-800 font-medium leading-relaxed max-w-xl">
-                        Partagez-nous votre projet. Notre équipe vous accompagnera avec les
-                        meilleures expertises pour en faire une réalité.
+                    <p className="text-base sm:text-lg text-stone-200 font-medium leading-relaxed max-w-xl">
+                        Discutons de vos enjeux et modélisons la meilleure feuille de route stratégique pour vos équipes.
                     </p>
 
                     <Link
                         href="/contact"
-                        className="inline-flex items-center gap-2.5 h-13 px-9 text-base font-semibold bg-[#0B1E3D] hover:bg-[#122B52] text-white rounded-xl shadow-sm transition-all hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                        className="inline-flex items-center gap-2.5 h-13 px-9 text-base font-semibold bg-amber-600 hover:bg-amber-700 text-white rounded-xl shadow-md transition-all hover:scale-[1.02]"
                     >
-                        Prendre rendez-vous
-                        <ArrowRight className="size-5 text-amber-400" />
+                        <span>Engager le dialogue</span>
+                        <ArrowRight className="size-5" />
                     </Link>
                 </FadeIn>
             </section>
