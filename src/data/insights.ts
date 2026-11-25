@@ -21,7 +21,7 @@ export const INSIGHT_ARTICLES: InsightArticle[] = [
         author: {
             name: "Fatoumata Niang",
             role: "Fondatrice & DG — FANI IMPACT LAB",
-            image: "/images/fondatrice.jpeg",
+            image: "/images/directrice-acceent.jpeg",
         },
         publishedAt: "15 Août 2026",
         readingTime: "5 min de lecture",
@@ -45,7 +45,7 @@ export const INSIGHT_ARTICLES: InsightArticle[] = [
         author: {
             name: "Fatoumata Niang",
             role: "Fondatrice & DG — FANI IMPACT LAB",
-            image: "/images/fondatrice.jpeg",
+            image: "/images/directrice-acceent.jpeg",
         },
         publishedAt: "28 Juillet 2026",
         readingTime: "7 min de lecture",
@@ -69,7 +69,7 @@ export const INSIGHT_ARTICLES: InsightArticle[] = [
         author: {
             name: "Fatoumata Niang",
             role: "Fondatrice & DG — FANI IMPACT LAB",
-            image: "/images/fondatrice.jpeg",
+            image: "/images/directrice-acceent.jpeg",
         },
         publishedAt: "10 Juin 2026",
         readingTime: "4 min de lecture",

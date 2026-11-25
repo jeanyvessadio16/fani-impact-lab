@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { SERVICES } from "@/data/service";
-import { ArrowRight, CheckCircle2, FileText, Target, Layers } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/animated";
+import { ArrowRight, CheckCircle2, FileText, Target } from "lucide-react";
+import { FadeIn } from "@/components/ui/animated";
 
 export const metadata: Metadata = {
   title: "Nos Expertises | Advisory, Écosystèmes, Academy & Research",
@@ -37,39 +38,60 @@ export const metadata: Metadata = {
 
 export default function NosExpertisesPage() {
   return (
-    <main className="relative flex-1 bg-white">
+    <main id="main-content" className="relative flex-1 bg-white">
       {/* HERO SECTION */}
-      <section className="relative min-h-[55vh] flex items-center justify-center overflow-hidden bg-[#061224] text-white border-b border-blue-950">
-        <div
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-35"
-          style={{ backgroundImage: "url('/images/bg-fil.jpg')" }}
+      <section className="relative min-h-[52vh] flex items-center justify-center overflow-hidden bg-[#061224] text-white border-b border-blue-950">
+        <Image
+          src="/images/bg-fil.jpg"
+          alt=""
+          aria-hidden="true"
+          fill
+          preload
+          sizes="100vw"
+          className="object-cover object-center opacity-40"
         />
-        <div className="absolute inset-0 z-0 bg-[#061224]/85" />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 z-0 bg-gradient-to-b from-[#061224]/85 via-[#061224]/85 to-[#061224]/95"
+        />
 
-        <div className="relative z-10 w-full px-6 md:px-12 pt-36 pb-20 max-w-4xl mx-auto text-center flex flex-col items-center gap-5">
-          <FadeIn direction="down" delay={0.1}>
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-900/60 border border-blue-700/60 text-amber-300 text-xs sm:text-sm font-bold tracking-wide">
-              <span>4 Pôles d'Excellence</span>
-            </div>
-          </FadeIn>
+        <div className="relative z-10 w-full px-6 md:px-12 pt-28 pb-16 md:pt-36 md:pb-20 max-w-4xl mx-auto text-center flex flex-col items-center gap-5">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-900/60 border border-blue-700/60 text-amber-300 text-xs sm:text-sm font-bold tracking-wide">
+            <span>4 Pôles d&apos;Excellence</span>
+          </div>
 
-          <FadeIn direction="up" delay={0.2}>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-              Nos <span className="text-amber-400">Expertises</span>
-            </h1>
-          </FadeIn>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            Nos <span className="text-amber-400">Expertises</span>
+          </h1>
 
-          <FadeIn direction="up" delay={0.3}>
-            <p className="text-lg sm:text-xl text-stone-200 font-medium leading-relaxed max-w-2xl">
-              De la clarification stratégique à la recherche appliquée en passant par l'animation écosystémique et la formation, découvrez comment nous accompagnons votre réussite.
-            </p>
-          </FadeIn>
+          <p className="text-lg sm:text-xl text-stone-200 font-medium leading-relaxed max-w-2xl">
+            De la clarification stratégique à la recherche appliquée en passant par l&apos;animation écosystémique et la formation, découvrez comment nous accompagnons votre réussite.
+          </p>
         </div>
       </section>
 
+      {/* BARRE D'ANCRES RAPIDES */}
+      <nav
+        aria-label="Accès rapide aux pôles d'expertise"
+        className="sticky top-[60px] sm:top-[64px] z-30 bg-white/95 backdrop-blur-xs border-b border-stone-200"
+      >
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-3 flex items-center gap-2 overflow-x-auto">
+          {SERVICES.map((service) => (
+            <a
+              key={service.id}
+              href={`#${service.slug}`}
+              className="shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-stone-200 bg-stone-50 hover:bg-[#061224] hover:text-white hover:border-[#061224] text-stone-800 text-xs sm:text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 focus-visible:ring-offset-2"
+            >
+              <span className="font-mono text-xs opacity-75">0{service.id}</span>
+              <span>{service.title}</span>
+            </a>
+          ))}
+        </div>
+      </nav>
+
       {/* DÉTAIL DES 4 PÔLES */}
-      <section className="relative py-24 bg-white">
-        <div className="relative z-10 w-full px-6 md:px-12 max-w-7xl mx-auto flex flex-col gap-24">
+      <section className="relative py-20 bg-white">
+        <div className="relative z-10 w-full px-6 md:px-12 max-w-7xl mx-auto flex flex-col gap-20">
           {SERVICES.map((service, index) => {
             const Icon = service.icon;
             const isEven = index % 2 === 0;
@@ -78,7 +100,7 @@ export default function NosExpertisesPage() {
               <div
                 key={service.id}
                 id={service.slug}
-                className={`scroll-mt-28 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start p-8 sm:p-12 rounded-3xl border border-stone-200 ${
+                className={`scroll-mt-36 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start p-8 sm:p-12 rounded-3xl border border-stone-200 ${
                   isEven ? "bg-stone-50/60" : "bg-white"
                 } shadow-sm`}
               >
@@ -88,7 +110,7 @@ export default function NosExpertisesPage() {
                     <div className="inline-flex items-center justify-center size-14 rounded-2xl bg-[#061224] text-amber-400 border border-blue-900 shadow-md">
                       <Icon className="size-7" />
                     </div>
-                    <span className="text-sm font-mono text-stone-400 font-bold uppercase tracking-widest">
+                    <span className="text-sm font-mono text-stone-600 font-bold uppercase tracking-widest">
                       0{service.id} — Pôle
                     </span>
                   </div>
@@ -97,7 +119,7 @@ export default function NosExpertisesPage() {
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-stone-950 tracking-tight">
                       {service.title}
                     </h2>
-                    <p className="text-sm font-bold text-amber-600 uppercase tracking-wider mt-1">
+                    <p className="text-sm font-bold text-amber-700 uppercase tracking-wider mt-1">
                       {service.tagline}
                     </p>
                     <div className="h-0.5 w-16 bg-amber-500 rounded-full mt-3" />
@@ -127,8 +149,8 @@ export default function NosExpertisesPage() {
 
                   <div className="pt-2">
                     <Link
-                      href={`/contact?type=${encodeURIComponent(service.title)}`}
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#061224] hover:bg-[#0B1E3D] text-white text-xs sm:text-sm font-semibold shadow-xs transition-all hover:scale-[1.02]"
+                      href={`/contact?type=${encodeURIComponent(service.slug)}`}
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#061224] hover:bg-[#0B1E3D] text-white text-xs sm:text-sm font-semibold shadow-xs transition-all hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 focus-visible:ring-offset-2"
                     >
                       <span>Solliciter le pôle {service.title}</span>
                       <ArrowRight className="size-4 text-amber-400" />
@@ -140,7 +162,7 @@ export default function NosExpertisesPage() {
                 <div className="lg:col-span-7 flex flex-col gap-6">
                   <h3 className="text-lg font-extrabold text-stone-950 tracking-tight flex items-center gap-2">
                     <Target className="size-5 text-blue-900" />
-                    <span>Domaines d'Intervention & Prestations</span>
+                    <span>Domaines d&apos;Intervention & Prestations</span>
                   </h3>
 
                   <div className="flex flex-col gap-4">
@@ -184,14 +206,14 @@ export default function NosExpertisesPage() {
       <section className="relative py-20 bg-[#061224] text-white overflow-hidden">
         <FadeIn direction="up" className="relative z-10 w-full px-6 md:px-12 max-w-4xl mx-auto text-center flex flex-col items-center gap-7">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
-            Besoin d'un accompagnement sur-mesure ?
+            Besoin d&apos;un accompagnement sur-mesure ?
           </h2>
           <p className="text-stone-300 text-base max-w-xl">
-            Chaque organisation a des défis uniques. Rencontrons-nous pour définir l'intervention la plus pertinente.
+            Chaque organisation a des défis uniques. Rencontrons-nous pour définir l&apos;intervention la plus pertinente.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm shadow-md transition-all hover:scale-[1.02]"
+            className="inline-flex items-center gap-2 px-8 py-3.5 min-h-[48px] rounded-xl bg-amber-400 hover:bg-amber-300 text-[#061224] font-bold text-sm shadow-md transition-all hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#061224]"
           >
             <span>Prendre contact</span>
             <ArrowRight className="size-4" />

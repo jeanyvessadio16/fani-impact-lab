@@ -16,6 +16,41 @@ export const TYPE_BESOIN_OPTIONS = [
   "Autre",
 ] as const;
 
+export type TypeBesoin = (typeof TYPE_BESOIN_OPTIONS)[number];
+
+function normalizeNeedKey(value: string): string {
+  return value
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
+/**
+ * Résout un paramètre d'URL (`?type=...`, slug de pôle ou libellé exact)
+ * vers l'une des options valides du formulaire de contact.
+ */
+export function resolveNeedType(param: string | null | undefined): TypeBesoin {
+  if (!param) return "Conseil stratégique";
+  const normalized = normalizeNeedKey(param);
+
+  const exactMatch = TYPE_BESOIN_OPTIONS.find(
+    (option) => normalizeNeedKey(option) === normalized
+  );
+  if (exactMatch) return exactMatch;
+
+  const slugAliases: Record<string, TypeBesoin> = {
+    advisory: "Conseil stratégique",
+    ecosysteme: "Développement d'écosystème",
+    ecosystemes: "Développement d'écosystème",
+    academy: "Formation",
+    research: "Étude / recherche",
+    recherche: "Étude / recherche",
+  };
+
+  return slugAliases[normalized] ?? "Conseil stratégique";
+}
+
 export const contactSchema = z.object({
   firstname: z
     .string()
@@ -36,22 +71,20 @@ export const contactSchema = z.object({
   organisation: z
     .string()
     .trim()
-    .min(1, "L'organisation est requise.")
     .max(100, "L'organisation ne peut pas dépasser 100 caractères."),
 
   fonction: z
     .string()
     .trim()
-    .min(1, "La fonction est requise.")
     .max(100, "La fonction ne peut pas dépasser 100 caractères."),
 
   phone: z
     .string()
     .trim()
-    .min(1, "Le numéro de téléphone est requis.")
-    .min(8, "Le numéro de téléphone doit contenir au moins 8 chiffres.")
-    .max(20, "Le numéro de téléphone ne peut pas dépasser 20 caractères.")
-    .regex(phoneRegex, "Veuillez saisir un numéro de téléphone valide."),
+    .refine(
+      (val) => val === "" || (val.length >= 8 && val.length <= 20 && phoneRegex.test(val)),
+      "Veuillez saisir un numéro de téléphone valide."
+    ),
 
   email: z
     .string()

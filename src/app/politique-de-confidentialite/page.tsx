@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function PolitiqueConfidentialitePage() {
   return (
-    <main className="relative flex-1 bg-white pt-36 pb-24 px-6 md:px-12 max-w-4xl mx-auto text-stone-900">
+    <main id="main-content" className="relative flex-1 bg-white pt-32 pb-24 px-6 md:px-12 max-w-4xl mx-auto text-stone-900">
       <h1 className="text-3xl sm:text-4xl font-extrabold text-[#061224] tracking-tight mb-8">
         Politique de Confidentialité
       </h1>
@@ -20,22 +20,22 @@ export default function PolitiqueConfidentialitePage() {
         <section className="flex flex-col gap-2">
           <h2 className="text-xl font-bold text-stone-950">1. Collecte des données personnelles</h2>
           <p>
-            Dans le cadre de l'utilisation du site <strong>FANI IMPACT LAB</strong>, nous pouvons être amenés à collecter des données personnelles via notre formulaire de contact, notamment : Nom, Prénom, Organisation, Fonction, Adresse email, Numéro de téléphone / WhatsApp et le détail du besoin exprimé.
+            Dans le cadre de l&apos;utilisation du site <strong>FANI IMPACT LAB</strong>, nous pouvons être amenés à collecter des données personnelles via notre formulaire de contact, notamment : Nom, Prénom, Organisation, Fonction, Adresse email, Numéro de téléphone / WhatsApp et le détail du besoin exprimé.
           </p>
         </section>
 
         <section className="flex flex-col gap-2">
           <h2 className="text-xl font-bold text-stone-950">2. Utilisation des données</h2>
           <p>
-            Les données collectées sont utilisées exclusivement par l'équipe de FANI IMPACT LAB pour :
+            Les données collectées sont utilisées exclusivement par l&apos;équipe de FANI IMPACT LAB pour :
           </p>
           <ul className="list-disc pl-5 flex flex-col gap-1">
-            <li>Répondre aux demandes d'information et de conseil stratégique.</li>
-            <li>Établir des propositions de partenariat ou d'accompagnement sur-mesure.</li>
+            <li>Répondre aux demandes d&apos;information et de conseil stratégique.</li>
+            <li>Établir des propositions de partenariat ou d&apos;accompagnement sur-mesure.</li>
             <li>Assurer le suivi administratif des échanges institutionnels.</li>
           </ul>
           <p className="mt-1">
-            Aucune donnée personnelle n'est vendue, louée ou cédée à des tiers à des fins commerciales.
+            Aucune donnée personnelle n&apos;est vendue, louée ou cédée à des tiers à des fins commerciales.
           </p>
         </section>
 
@@ -49,10 +49,24 @@ export default function PolitiqueConfidentialitePage() {
         <section className="flex flex-col gap-2">
           <h2 className="text-xl font-bold text-stone-950">4. Vos droits</h2>
           <p>
-            Conformément à la réglementation sur la protection des données personnelles, vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition sur les données vous concernant.
+            Conformément à la réglementation sur la protection des données personnelles, vous disposez d&apos;un droit d&apos;accès, de rectification, de suppression et d&apos;opposition sur les données vous concernant.
           </p>
           <p>
-            Pour exercer ce droit, vous pouvez nous contacter directement par email à : <strong>info@acceent.org</strong> ou par WhatsApp au <strong>+221 78 603 20 20</strong>.
+            Pour exercer ce droit, vous pouvez nous contacter directement par email à :{" "}
+            <a
+              href="mailto:info@acceent.org"
+              className="text-blue-900 font-semibold underline underline-offset-2 hover:text-blue-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 rounded"
+            >
+              info@acceent.org
+            </a>{" "}
+            ou par WhatsApp au{" "}
+            <a
+              href="tel:+221786032020"
+              className="text-blue-900 font-semibold underline underline-offset-2 hover:text-blue-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 rounded"
+            >
+              +221 78 603 20 20
+            </a>
+            .
           </p>
         </section>
       </div>

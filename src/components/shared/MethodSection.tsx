@@ -1,5 +1,4 @@
 import React from "react";
-import { ArrowRight } from "lucide-react";
 import { OUR_METHOD, type MethodData } from "@/data/about";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/animated";
 
@@ -15,7 +14,7 @@ export default function MethodSection({
   return (
     <section
       id="notre-methode"
-      className={`relative py-20 bg-[#071326] text-white border-y border-blue-950 overflow-hidden ${className}`}
+      className={`scroll-mt-24 relative py-20 bg-[#061224] text-white border-y border-blue-950 overflow-hidden ${className}`}
     >
       <div className="relative z-10 w-full px-6 md:px-12 max-w-7xl mx-auto flex flex-col gap-12">
         {/* En-tête de section */}
@@ -35,13 +34,13 @@ export default function MethodSection({
         <StaggerContainer staggerChildren={0.15} className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
           {data.steps.map((step, idx) => (
             <StaggerItem key={step.id}>
-              <div className="group relative flex flex-col h-full p-7 rounded-2xl bg-[#0B1E3D] border border-blue-900/80 hover:border-amber-400/60 shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="relative flex flex-col h-full p-7 rounded-2xl bg-[#0B1E3D] border border-blue-900/80 hover:border-amber-400/50 shadow-lg transition-colors duration-300">
                 {/* Header carte : Lettre Monogramme */}
                 <div className="flex items-center justify-between mb-6">
-                  <div className="size-16 rounded-2xl bg-amber-500/20 border border-amber-400/40 text-amber-400 flex items-center justify-center font-black text-3xl shadow-inner group-hover:scale-105 group-hover:bg-amber-500 group-hover:text-[#061224] transition-all duration-300">
+                  <div className="size-16 rounded-2xl bg-amber-500/20 border border-amber-400/40 text-amber-400 flex items-center justify-center font-extrabold text-3xl shadow-inner">
                     {step.letter}
                   </div>
-                  <span className="text-xs font-mono text-stone-400 font-bold uppercase tracking-widest">
+                  <span className="text-xs font-mono text-stone-300 font-bold uppercase tracking-widest">
                     Étape 0{idx + 1}
                   </span>
                 </div>
@@ -53,7 +52,7 @@ export default function MethodSection({
                 <p className="text-xs font-semibold text-amber-300 uppercase tracking-wider mb-4">
                   {step.subtitle}
                 </p>
-                <div className="h-0.5 w-10 bg-amber-400/80 group-hover:w-16 transition-all duration-300 mb-4" />
+                <div className="h-0.5 w-10 bg-amber-400/80 mb-4" />
 
                 {/* Description */}
                 <p className="text-stone-300 text-sm leading-relaxed font-normal flex-1">

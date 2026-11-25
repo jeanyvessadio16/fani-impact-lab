@@ -1,7 +1,11 @@
 "use client";
 
 import React from "react";
-import { motion, type HTMLMotionProps } from "motion/react";
+import { motion, MotionConfig, type HTMLMotionProps } from "motion/react";
+
+export function MotionProvider({ children }: { children: React.ReactNode }) {
+  return <MotionConfig reducedMotion="user">{children}</MotionConfig>;
+}
 
 /* ========================================================================== */
 /*  FADE IN ANIMATION COMPONENT                                               */

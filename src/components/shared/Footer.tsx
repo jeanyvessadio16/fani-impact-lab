@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -7,7 +5,6 @@ import {
   Mail,
   Phone,
   ArrowUpRight,
-  MessageSquare,
 } from "lucide-react";
 import { NAV_LINKS, FOOTER_SERVICES_LINKS, FOOTER_LEGAL_LINKS, COMPANY_CONTACT, SOCIAL_LINKS } from "@/data/navigation";
 import { SocialIcon } from "@/components/ui/SocialIcons";
@@ -23,14 +20,18 @@ export default function Footer() {
 
           {/* ── Column 1 : Brand ── */}
           <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 group w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg">
-              <div className="relative overflow-hidden rounded-lg p-1 bg-white border border-blue-900 group-hover:border-amber-500/60 transition-colors">
+            <Link
+              href="/"
+              className="flex items-center gap-3 group w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#061224] rounded-xl"
+            >
+              <div className="relative overflow-hidden rounded-xl px-2.5 py-1.5 bg-white border border-blue-900 group-hover:border-amber-500/60 transition-colors">
                 <Image
                   src="/logo/logo-fil.png"
                   alt="Logo FANI IMPACT LAB"
-                  width={80}
-                  height={80}
-                  className="object-contain transition-transform duration-300 group-hover:scale-105"
+                  width={1673}
+                  height={940}
+                  sizes="140px"
+                  className="h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
             </Link>
@@ -40,7 +41,7 @@ export default function Footer() {
             </p>
 
             <div className="flex flex-col gap-2 mt-1">
-              <span className="text-xs font-semibold text-stone-400">Rejoignez notre réseau :</span>
+              <span className="text-xs font-semibold text-stone-300">Rejoignez notre réseau :</span>
               <div className="flex items-center gap-2 flex-wrap">
                 {SOCIAL_LINKS.map(({ id, name, href, icon }) => (
                   <a
@@ -50,7 +51,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     aria-label={name}
                     title={name}
-                    className="p-2 rounded-lg bg-blue-950/80 border border-blue-900/60 text-stone-300 hover:text-amber-400 hover:bg-blue-900/80 hover:border-amber-500/40 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+                    className="size-11 inline-flex items-center justify-center rounded-xl bg-blue-950/80 border border-blue-900/60 text-stone-300 hover:text-amber-400 hover:bg-blue-900/80 hover:border-amber-500/40 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#061224]"
                   >
                     <SocialIcon name={icon} className="size-4" />
                   </a>
@@ -70,7 +71,7 @@ export default function Footer() {
                 <li key={id}>
                   <Link
                     href={href}
-                    className="group inline-flex items-center gap-1.5 text-sm text-stone-300 hover:text-white transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 rounded"
+                    className="group inline-flex items-center gap-1.5 text-sm text-stone-300 hover:text-white transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#061224] rounded"
                   >
                     <ArrowUpRight className="size-3.5 text-amber-400 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     {label}
@@ -91,7 +92,7 @@ export default function Footer() {
                 <li key={id}>
                   <Link
                     href={href}
-                    className="group inline-flex items-center gap-1.5 text-sm text-stone-300 hover:text-white transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 rounded"
+                    className="group inline-flex items-center gap-1.5 text-sm text-stone-300 hover:text-white transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#061224] rounded"
                   >
                     <ArrowUpRight className="size-3.5 text-amber-400 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     {label}
@@ -111,7 +112,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${COMPANY_CONTACT.email}`}
-                  className="group flex items-start gap-3 text-sm text-stone-300 hover:text-white transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 rounded"
+                  className="group flex items-start gap-3 text-sm text-stone-300 hover:text-white transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#061224] rounded"
                 >
                   <div className="mt-0.5 inline-flex items-center justify-center size-7 rounded-lg bg-blue-900/50 border border-blue-700/40 text-amber-400 shrink-0 group-hover:bg-blue-800/60 transition-colors">
                     <Mail className="size-3.5" />
@@ -122,7 +123,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`tel:${COMPANY_CONTACT.phone.replace(/\s+/g, '')}`}
-                  className="group flex items-start gap-3 text-sm text-stone-300 hover:text-white transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 rounded"
+                  className="group flex items-start gap-3 text-sm text-stone-300 hover:text-white transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#061224] rounded"
                 >
                   <div className="mt-0.5 inline-flex items-center justify-center size-7 rounded-lg bg-blue-900/50 border border-blue-700/40 text-amber-400 shrink-0 group-hover:bg-blue-800/60 transition-colors">
                     <Phone className="size-3.5" />
@@ -140,37 +141,15 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ── CTA bande ── */}
-        <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-[#0B1E3D] border border-blue-900 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
-          <div className="flex items-start gap-3">
-            <div className="mt-0.5 inline-flex items-center justify-center size-9 rounded-xl bg-amber-500/20 border border-amber-400/30 text-amber-400 shrink-0">
-              <MessageSquare className="size-4" />
-            </div>
-            <div>
-              <p className="text-sm font-bold text-white">Parlez-nous de votre projet</p>
-              <p className="text-xs text-stone-300 mt-0.5">
-                Transformez vos idées en impact concret avec FANI IMPACT LAB.
-              </p>
-            </div>
-          </div>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold shadow-xs transition-all hover:scale-[1.02] active:scale-[0.98] shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
-          >
-            Prendre contact
-            <ArrowUpRight className="size-4" />
-          </Link>
-        </div>
-
         {/* ── Bottom bar ── */}
-        <div className="mt-10 pt-6 border-t border-blue-950 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-400">
+        <div className="mt-12 pt-6 border-t border-blue-950 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-300">
           <p>© {year} FANI IMPACT LAB (FIL). Tous droits réservés. Ziguinchor, Sénégal.</p>
           <div className="flex items-center gap-4">
             {FOOTER_LEGAL_LINKS.map((legalLink) => (
               <Link
                 key={legalLink.id}
                 href={legalLink.href}
-                className="hover:text-stone-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 rounded"
+                className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#061224] rounded"
               >
                 {legalLink.label}
               </Link>

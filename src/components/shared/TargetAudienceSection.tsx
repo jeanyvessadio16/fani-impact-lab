@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function TargetAudienceSection() {
   return (
-    <section id="pour-qui" className="relative py-20 bg-white border-b border-stone-200 overflow-hidden">
+    <section id="pour-qui" className="scroll-mt-24 relative py-20 bg-white border-b border-stone-200 overflow-hidden">
       <div className="relative z-10 w-full px-6 md:px-12 max-w-7xl mx-auto flex flex-col gap-12">
         {/* Header */}
         <FadeIn direction="up" className="flex flex-col gap-3.5 max-w-3xl">
@@ -17,7 +17,7 @@ export default function TargetAudienceSection() {
             Pour <span className="text-blue-900">qui ?</span>
           </h2>
           <p className="text-base sm:text-lg text-stone-800 font-medium leading-relaxed">
-            FANI IMPACT LAB accompagne une diversité d'acteurs engagés dans la transformation durable des territoires et le développement économique en Afrique.
+            FANI IMPACT LAB accompagne une diversité d&apos;acteurs engagés dans la transformation durable des territoires et le développement économique en Afrique.
           </p>
         </FadeIn>
 
@@ -27,13 +27,16 @@ export default function TargetAudienceSection() {
             const Icon = item.icon;
             return (
               <StaggerItem key={item.id}>
-                <div className="group relative flex flex-col justify-between p-6 rounded-2xl border border-stone-200 bg-white shadow-2xs transition-all duration-200 hover:border-blue-400 hover:shadow-md hover:-translate-y-1 h-full">
+                <Link
+                  href={`/contact?type=${encodeURIComponent(item.needType ?? "Conseil stratégique")}`}
+                  className="group relative flex flex-col justify-between p-6 rounded-2xl border border-stone-200 bg-white shadow-2xs transition-all duration-200 hover:border-blue-400 hover:shadow-md hover:-translate-y-1 h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 focus-visible:ring-offset-2"
+                >
                   <div className="flex flex-col gap-3">
                     <div className="flex items-center justify-between">
                       <div className="inline-flex items-center justify-center size-11 rounded-xl bg-blue-50 border border-blue-200 text-blue-900 transition-colors group-hover:bg-blue-900 group-hover:text-white shrink-0">
                         <Icon className="size-5" />
                       </div>
-                      <span className="text-xs font-mono text-stone-400 font-bold">
+                      <span className="text-xs font-mono text-stone-600 font-bold tabular-nums">
                         0{item.id}
                       </span>
                     </div>
@@ -49,11 +52,11 @@ export default function TargetAudienceSection() {
                     )}
                   </div>
 
-                  <div className="mt-4 pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-stone-500 group-hover:text-blue-900 transition-colors">
+                  <div className="mt-4 pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-stone-700 group-hover:text-blue-900 transition-colors">
                     <span>Discuter de vos besoins</span>
                     <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
                   </div>
-                </div>
+                </Link>
               </StaggerItem>
             );
           })}
@@ -63,7 +66,7 @@ export default function TargetAudienceSection() {
         <FadeIn direction="up" delay={0.2} className="text-center mt-4">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#061224] hover:bg-[#0B1E3D] text-white text-sm font-semibold shadow-xs transition-all hover:scale-[1.02]"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#061224] hover:bg-[#0B1E3D] text-white text-sm font-semibold shadow-xs transition-all hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 focus-visible:ring-offset-2"
           >
             <span>Vous vous reconnaissez ? Échangeons sur votre projet</span>
             <ArrowRight className="size-4 text-amber-400" />

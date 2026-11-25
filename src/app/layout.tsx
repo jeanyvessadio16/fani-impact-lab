@@ -1,14 +1,22 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 import HeaderNavbar from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
+import { MotionProvider } from "@/components/ui/animated";
 
 const poppins = Poppins({
-  variable: "--font-sans",
+  variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  weight: ["500", "700"],
   display: "swap",
 });
 
@@ -101,7 +109,7 @@ const jsonLd = {
   "@type": "Organization",
   "name": "FANI IMPACT LAB",
   "url": siteUrl,
-  "logo": `${siteUrl}/logo/FIL-LOGO.png`,
+  "logo": `${siteUrl}/logo/logo-fil.png`,
   "description":
     "Cabinet de conseil stratégique spécialisé dans l'entrepreneuriat, l'innovation et le développement des écosystèmes au Sénégal et en Afrique.",
   "address": {
@@ -139,7 +147,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${poppins.variable} h-full antialiased`}>
+    <html lang="fr" className={`${poppins.variable} ${jetbrainsMono.variable} h-full antialiased`}>
       <head>
         <script
           type="application/ld+json"
@@ -147,9 +155,17 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col">
-        <HeaderNavbar />
-        {children}
-        <Footer />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:rounded-xl focus:bg-[#061224] focus:text-white focus:text-sm focus:font-semibold focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-amber-400"
+        >
+          Aller au contenu principal
+        </a>
+        <MotionProvider>
+          <HeaderNavbar />
+          {children}
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   );

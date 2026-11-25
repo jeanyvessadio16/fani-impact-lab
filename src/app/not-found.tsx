@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowLeft, Home, Mail } from "lucide-react";
+import Image from "next/image";
+import { Home, Mail } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,15 +10,19 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#061224] text-white border-b border-blue-950">
-      {/* Arrière-plan avec Image fixe */}
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-40"
-        style={{ backgroundImage: "url('/images/bg-fil.jpg')" }}
+    <main id="main-content" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#061224] text-white border-b border-blue-950">
+      {/* Arrière-plan optimisé */}
+      <Image
+        src="/images/bg-fil.jpg"
+        alt=""
+        aria-hidden="true"
+        fill
+        sizes="100vw"
+        className="object-cover object-center opacity-40"
       />
 
       {/* Masque de lisibilité sombre uni aux reflets bleu marine */}
-      <div className="absolute inset-0 z-0 bg-[#071326]/85" />
+      <div aria-hidden="true" className="absolute inset-0 z-0 bg-[#061224]/85" />
 
       {/* Contenu principal 404 */}
       <div className="relative z-10 w-full px-6 md:px-12 py-24 max-w-4xl mx-auto text-center flex flex-col items-center gap-7">
@@ -28,7 +33,7 @@ export default function NotFound() {
 
         {/* Chiffre 404 géant & Titre */}
         <div className="flex flex-col items-center gap-2">
-          <span className="text-7xl sm:text-9xl font-black text-amber-400 tracking-tighter leading-none select-none">
+          <span className="text-7xl sm:text-9xl font-extrabold text-amber-400 tracking-tighter leading-none select-none">
             404
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight max-w-2xl">
@@ -45,15 +50,15 @@ export default function NotFound() {
         <div className="flex flex-wrap items-center justify-center gap-4 pt-4 w-full sm:w-auto">
           <Link
             href="/"
-            className="inline-flex items-center gap-2.5 h-13 min-h-[48px] px-8 text-base font-semibold bg-[#0B1E3D] hover:bg-[#122B52] text-white border border-blue-700/60 rounded-xl shadow-md transition-all hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950"
+            className="inline-flex items-center gap-2.5 h-12 min-h-[48px] px-8 text-base font-bold bg-amber-400 hover:bg-amber-300 text-[#061224] rounded-xl shadow-md transition-all hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#061224]"
           >
-            <Home className="size-5 text-amber-400" />
+            <Home className="size-5" />
             <span>Retour à l&apos;accueil</span>
           </Link>
 
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2.5 h-13 min-h-[48px] px-7 text-base font-semibold border border-white/30 bg-white/10 hover:bg-white/20 text-white rounded-xl backdrop-blur-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950"
+            className="inline-flex items-center gap-2.5 h-12 min-h-[48px] px-7 text-base font-semibold border border-white/30 bg-white/10 hover:bg-white/20 hover:text-white text-white rounded-xl backdrop-blur-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#061224]"
           >
             <Mail className="size-5" />
             <span>Nous contacter</span>

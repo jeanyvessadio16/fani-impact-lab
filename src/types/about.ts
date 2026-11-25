@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+import type { TypeBesoin } from "@/validations/contact";
 
 /**
  * Représente un domaine d'intervention de FANI IMPACT LAB.
@@ -24,6 +25,8 @@ export type ClientItem = {
     name: string;
     /** Description ou précision sur la proposition de valeur */
     description?: string;
+    /** Type de besoin pré-sélectionné dans le formulaire de contact */
+    needType?: TypeBesoin;
     /** Icône Lucide représentative */
     icon: LucideIcon;
 };

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowRight, MapPin, Globe, CheckCircle2 } from "lucide-react";
@@ -59,64 +60,61 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="relative flex-1 bg-white">
+    <main id="main-content" className="relative flex-1 bg-white">
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#061224] text-white border-b border-blue-950">
-        <div
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-35"
-          style={{ backgroundImage: "url('/images/bg-fil.jpg')" }}
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#061224] text-white border-b border-blue-950">
+        <Image
+          src="/images/bg-fil.jpg"
+          alt=""
+          aria-hidden="true"
+          fill
+          preload
+          sizes="100vw"
+          className="object-cover object-center opacity-45"
         />
-        <div className="absolute inset-0 z-0 bg-[#061224]/85" />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 z-0 bg-gradient-to-r from-[#061224]/95 via-[#061224]/85 to-[#061224]/70"
+        />
 
-        <div className="relative z-10 w-full px-6 md:px-12 pt-36 pb-24 md:pt-44 md:pb-32 flex flex-col items-start space-y-7 max-w-7xl mx-auto">
-          {/* Tag marque */}
-          <FadeIn direction="down" delay={0.1}>
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-900/60 border border-blue-700/60 backdrop-blur-md text-amber-300 text-xs sm:text-sm font-bold tracking-wide">
-              <span>FANI IMPACT LAB</span>
-            </div>
-          </FadeIn>
+        <div className="relative z-10 w-full px-6 md:px-12 pt-28 pb-20 md:pt-36 md:pb-24 flex flex-col items-start space-y-7 max-w-7xl mx-auto">
 
           {/* Titre Principal */}
-          <FadeIn direction="up" delay={0.2}>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] max-w-4xl">
-              Transformer les idées en <span className="text-amber-400">impact.</span>
-            </h1>
-          </FadeIn>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] max-w-4xl">
+            Transformer les idées en <span className="text-amber-400">impact.</span>
+          </h1>
 
           {/* Proposition de valeur */}
-          <FadeIn direction="up" delay={0.3}>
-            <p className="text-lg sm:text-xl text-stone-200 font-medium leading-relaxed max-w-3xl">
-              Nous accompagnons les entrepreneurs, organisations et acteurs des écosystèmes dans la conception de stratégies, la structuration de leurs initiatives et la création d'un impact durable en Afrique.
-            </p>
-          </FadeIn>
+          <p className="text-lg sm:text-xl text-stone-200 font-medium leading-relaxed max-w-3xl">
+            Nous accompagnons les entrepreneurs, organisations et acteurs des écosystèmes dans la conception de stratégies, la structuration de leurs initiatives et la création d&apos;un impact durable en Afrique.
+          </p>
 
           {/* CTA Principal & Secondaire */}
-          <FadeIn direction="up" delay={0.4}>
-            <div className="flex flex-wrap items-center gap-4 pt-3 w-full sm:w-auto">
-              <Link
-                href="/contact"
-                className={buttonVariants({
-                  variant: "default",
-                  className:
-                    "h-13 min-h-[48px] px-8 text-base font-semibold bg-[#0B1E3D] hover:bg-[#122B52] text-white border border-blue-700/60 rounded-xl shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98] gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500",
-                })}
-              >
-                <span>Parler de votre projet</span>
-                <ArrowRight className="size-5 text-amber-400" />
-              </Link>
+          <div className="flex flex-wrap items-center gap-4 pt-3 w-full sm:w-auto">
+            <Link
+              href="/contact"
+              className={buttonVariants({
+                variant: "cta",
+                size: "xl",
+                className:
+                  "min-h-[48px] px-8 transition-all hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#061224]",
+              })}
+            >
+              <span>Parler de votre projet</span>
+            </Link>
 
-              <Link
-                href="/nos-expertises"
-                className={buttonVariants({
-                  variant: "outline",
-                  className:
-                    "h-13 min-h-[48px] px-7 text-base font-semibold border-white/30 bg-white/10 hover:bg-white/20 text-white rounded-xl backdrop-blur-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white",
-                })}
-              >
-                Découvrir nos expertises
-              </Link>
-            </div>
-          </FadeIn>
+            <Link
+              href="/nos-expertises"
+              className={buttonVariants({
+                variant: "outline",
+                size: "xl",
+                className:
+                  "min-h-[48px] px-7 border-white/30 bg-white/10 hover:bg-white/20 hover:text-white text-white backdrop-blur-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#061224]",
+              })}
+            >
+              Découvrir nos expertises
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -134,12 +132,12 @@ export default function Home() {
               </span> les territoires.
             </h2>
             <p className="text-base sm:text-lg text-stone-800 font-medium leading-relaxed">
-              Chez FANI IMPACT LAB, nous croyons que les grands défis ne peuvent pas être résolus isolément. La collaboration entre entrepreneurs, institutions, investisseurs, collectivités, chercheurs et partenaires constitue l'unique levier pour démultiplier l'impact.
+              Chez FANI IMPACT LAB, nous croyons que les grands défis ne peuvent pas être résolus isolément. La collaboration entre entrepreneurs, institutions, investisseurs, collectivités, chercheurs et partenaires constitue l&apos;unique levier pour démultiplier l&apos;impact.
             </p>
             <div>
               <Link
                 href="/a-propos"
-                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-[#061224] hover:bg-[#0B1E3D] text-white text-sm font-semibold shadow-xs transition-all hover:scale-[1.02]"
+                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-[#061224] hover:bg-[#0B1E3D] text-white text-sm font-semibold shadow-xs transition-all hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 focus-visible:ring-offset-2"
               >
                 <span>Découvrir FIL</span>
                 <ArrowRight className="size-4 text-amber-400" />
@@ -159,7 +157,7 @@ export default function Home() {
                 </div>
               </div>
               <blockquote className="text-stone-200 text-sm sm:text-base italic leading-relaxed border-l-2 border-amber-400 pl-4">
-                &ldquo;Créer des ponts entre les idées innovantes et les capacités d'exécution sur le terrain pour bâtir des écosystèmes autonomes et résilients.&rdquo;
+                &ldquo;Créer des ponts entre les idées innovantes et les capacités d&apos;exécution sur le terrain pour bâtir des écosystèmes autonomes et résilients.&rdquo;
               </blockquote>
             </div>
           </FadeIn>
@@ -167,11 +165,11 @@ export default function Home() {
       </section>
 
       {/* 3. SECTION NOS EXPERTISES (4 PÔLES) */}
-      <section id="nos-expertises" className="relative py-24 bg-white overflow-hidden">
+      <section id="nos-expertises" className="scroll-mt-24 relative py-24 bg-white overflow-hidden">
         <div className="relative z-10 w-full px-6 md:px-12 max-w-7xl mx-auto flex flex-col gap-14">
           <FadeIn direction="up" className="flex flex-col gap-4 max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold tracking-widest uppercase w-fit">
-              <span>Nos Pôles d'Excellence</span>
+              <span>Nos Pôles d&apos;Excellence</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-stone-950 leading-tight">
               Nos <span className="text-blue-900">expertises</span>
@@ -186,13 +184,13 @@ export default function Home() {
               const Icon = service.icon;
               return (
                 <StaggerItem key={service.id}>
-                  <Card className="group relative flex flex-col border-stone-200 bg-white transition-all duration-300 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1 rounded-2xl shadow-2xs h-full justify-between">
+                  <Card className="group relative flex flex-col border-stone-200 bg-white transition-all duration-300 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-blue-800 rounded-2xl shadow-2xs h-full justify-between">
                     <CardHeader className="pb-3">
                       <div className="flex items-center justify-between mb-3">
                         <div className="inline-flex items-center justify-center size-12 rounded-xl bg-blue-50 border border-blue-200 text-blue-900 transition-colors group-hover:bg-[#061224] group-hover:text-amber-400">
                           <Icon className="size-6" />
                         </div>
-                        <span className="text-xs font-mono text-stone-500 font-bold tabular-nums">
+                        <span className="text-xs font-mono text-stone-600 font-bold tabular-nums">
                           0{service.id}
                         </span>
                       </div>
@@ -220,7 +218,7 @@ export default function Home() {
                     <CardFooter className="border-t border-stone-100 bg-stone-50/60 flex items-center justify-between py-3.5 px-6 rounded-b-2xl">
                       <Link
                         href={`/nos-expertises#${service.slug}`}
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-900 group-hover:text-amber-600 transition-colors w-full justify-between"
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-900 group-hover:text-amber-700 transition-colors w-full justify-between after:absolute after:inset-0 focus-visible:outline-none rounded"
                       >
                         <span>{service.ctaText}</span>
                         <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
@@ -241,7 +239,7 @@ export default function Home() {
       <ImpactAmbitionSection />
 
       {/* 9. ANCRAGE TERRITORIAL & LOCALISATION */}
-      <section id="ancrage-territorial" className="relative py-24 bg-white border-b border-stone-200 overflow-hidden">
+      <section id="ancrage-territorial" className="scroll-mt-24 relative py-24 bg-white border-b border-stone-200 overflow-hidden">
         <div className="relative z-10 w-full px-6 md:px-12 max-w-7xl mx-auto flex flex-col gap-12">
           <FadeIn direction="up" className="flex flex-col gap-3.5 max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold tracking-widest uppercase w-fit">
@@ -252,7 +250,7 @@ export default function Home() {
               Où nous <span className="text-blue-900">trouver</span>
             </h2>
             <p className="text-base sm:text-lg text-stone-800 font-medium leading-relaxed">
-              Basé à Ziguinchor (Casamance, Sénégal), FANI IMPACT LAB opère au cœur des réalités territoriales de l'Afrique de l'Ouest.
+              Basé à Ziguinchor (Casamance, Sénégal), FANI IMPACT LAB opère au cœur des réalités territoriales de l&apos;Afrique de l&apos;Ouest.
             </p>
           </FadeIn>
 
@@ -278,7 +276,7 @@ export default function Home() {
                   Sénégal
                 </span>
                 <span className="px-3 py-1 rounded-full bg-amber-100 text-amber-900 font-bold text-xs">
-                  Afrique de l'Ouest
+                  Afrique de l&apos;Ouest
                 </span>
               </div>
             </div>
@@ -286,7 +284,7 @@ export default function Home() {
             <div className="w-full md:w-auto">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-[#061224] hover:bg-[#0B1E3D] text-white text-sm font-semibold shadow-md transition-all hover:scale-[1.02]"
+                className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-[#061224] hover:bg-[#0B1E3D] text-white text-sm font-semibold shadow-md transition-all hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 focus-visible:ring-offset-2"
               >
                 <span>Entrer en contact</span>
                 <ArrowRight className="size-4 text-amber-400" />
@@ -300,7 +298,7 @@ export default function Home() {
       <section className="relative py-24 bg-[#061224] text-white overflow-hidden">
         <FadeIn direction="up" className="relative z-10 w-full px-6 md:px-12 max-w-4xl mx-auto text-center flex flex-col items-center gap-7">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-900/60 border border-blue-700/60 text-amber-300 text-xs font-bold tracking-wide">
-            <span>Co-construisons l'Avenir</span>
+            <span>Co-construisons l&apos;Avenir</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight max-w-2xl">
@@ -313,7 +311,7 @@ export default function Home() {
 
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2.5 h-13 px-9 text-base font-semibold bg-amber-600 hover:bg-amber-700 text-white rounded-xl shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98]"
+            className="inline-flex items-center gap-2.5 h-12 min-h-[48px] px-9 text-base font-bold bg-amber-400 hover:bg-amber-300 text-[#061224] rounded-xl shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#061224]"
           >
             <span>Parler de votre projet</span>
             <ArrowRight className="size-5" />

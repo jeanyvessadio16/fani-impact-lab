@@ -1,4 +1,4 @@
-import { Lightbulb, Network, GraduationCap, FlaskConical, type LucideIcon } from "lucide-react";
+import { Lightbulb, Network, GraduationCap, FlaskConical } from "lucide-react";
 import type { Service, ServiceListItem } from "@/types/service";
 
 export type { Service, ServiceListItem };
@@ -16,7 +16,7 @@ export const SERVICES: Service[] = [
             { id: 2, name: "Transformation organisationnelle", description: "Reconception des processus, gouvernance et agilité d'exécution." },
             { id: 3, name: "Modèles économiques & pérennité", description: "Ingénierie de business models viables adaptés aux marchés africains." },
             { id: 4, name: "Développement organisationnel", description: "Renforcement de la structuration interne et gestion du changement." },
-            { id: 5, name: "Politiques publiques & innovation", description: "Conseil aux institutions pour l'élaboration de cadences réglementaires et stratégiques." },
+            { id: 5, name: "Politiques publiques & innovation", description: "Conseil aux institutions pour l'élaboration de cadres réglementaires et stratégiques." },
         ],
         domains: [
             "Stratégie",
